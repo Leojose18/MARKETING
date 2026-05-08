@@ -1,5 +1,6 @@
 # Auditoría de Marketing: Krash Depot
 **URL:** https://www.krash-depot.com/
+**Instagram:** https://www.instagram.com/krashdepot?igsh=ajNleW5zYnZzcTFp
 **Fecha:** 07 de mayo de 2026
 **Tipo de Negocio:** Retail Híbrido — Tienda Física + E-commerce (Electrodomésticos, Electrónica y Hogar)
 **Puntuación General de Marketing: 43/100 (Calificación: D)**
@@ -241,6 +242,7 @@ Krash Depot opera en la Zona Libre de Paraguaná — un foso regulatorio genuino
 - Sin fotos del equipo, historia de fundación ni visibilidad del liderazgo encontrados
 - Sin certificaciones, premios ni menciones en medios encontrados
 - Seguidores en redes sociales modestos: ~3.159 seguidores combinados en Facebook para una operación de retail físico de 3.000 m²
+- Perfil de Instagram activo (@krashdepot): https://www.instagram.com/krashdepot?igsh=ajNleW5zYnZzcTFp — canal con potencial de crecimiento significativo aún sin aprovechar
 
 **Brecha de Confianza:** Para los consumidores venezolanos que realizan compras grandes de electrodomésticos (frecuentemente $300–$2.000 USD), la confianza es el principal motor de compra. La ausencia de reseñas, prueba social e información visible de la empresa es una barrera de conversión significativa para compradores nuevos.
 
@@ -258,7 +260,7 @@ Krash Depot tiene una sólida operación de retail físico anclada en una ventaj
 **Canales de Crecimiento Sin Explotar:**
 1. **SEO Turístico:** Paraguaná es descrita como "uno de los destinos turísticos de mayor crecimiento de Venezuela." Los turistas investigan compras antes de llegar — capturar este tráfico de búsqueda es una oportunidad de crecimiento de $0 de costo
 2. **Comercio por WhatsApp:** Venezuela tiene una penetración de WhatsApp extremadamente alta; un catálogo de WhatsApp Business formalizado + lista de difusión podría generar más de $5.000/mes en ventas directas
-3. **Instagram Shopping:** Etiquetado de productos + Reels mostrando productos con comparaciones de precios frente a mercados con IVA incluido es un formato probado para esta categoría
+3. **Instagram Shopping (@krashdepot):** El perfil existe (https://www.instagram.com/krashdepot?igsh=ajNleW5zYnZzcTFp) — activar etiquetado de productos + Reels mostrando comparaciones de precios frente a mercados con IVA incluido es un formato probado para esta categoría
 4. **Retención por Email/SMS:** No hay evidencia de una base de datos de clientes o sistema de re-engagement — cada cliente pasado está siendo ignorado
 
 **Riesgo Estratégico:** Si la ventaja regulatoria de la Zona Libre se debilita (cambio de política fiscal), Krash Depot no tendrá ningún foso de marketing al cual recurrir. Construir equidad de marca, autoridad de contenido y una base de datos de clientes ahora es un seguro contra ese escenario.
