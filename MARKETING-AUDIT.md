@@ -233,9 +233,12 @@ Krash Depot opera en la Zona Libre de Paraguaná — un foso regulatorio genuino
 - Distribuye marcas internacionales reconocibles (KENWOOD, SANKEY, VIOTTO, GASCO)
 - Ha operado el tiempo suficiente como para aparecer en Wikimapia y Foursquare (señal de longevidad)
 - Presencia en LinkedIn indica cierta credibilidad profesional/corporativa
+- Instagram (@krashdepot) activo con formato Reels y colaboraciones con influencers locales (ej. @nazaret.oficial)
+- Integración de Cashea (plataforma BNPL venezolana) comunica modernidad financiera y amplía el acceso de compra
+- Servicio de delivery gratuito en Punto Fijo para pedidos mayores a 50 ref — señal operacional no comunicada visualmente en el sitio
 
 **Debilidades:**
-- Dos páginas de Facebook separadas generan confusión de marca — ¿cuál es la oficial?
+- **Tres páginas de Facebook** detectadas (`KrashDepotVenezuela`, `KRASHDEPOTVZLA`, `KRASH DEPOT S.A.`) — la fragmentación es peor de lo estimado inicialmente
 - Sin reseñas de clientes visibles en Google, Facebook o cualquier plataforma de reseñas
 - Contenido de "Quiénes Somos" no accesible fácilmente (la página existe en `/quienes-somos` pero devolvió 403)
 - Sin fotos del equipo, historia de fundación ni visibilidad del liderazgo encontrados
@@ -253,15 +256,67 @@ Krash Depot opera en la Zona Libre de Paraguaná — un foso regulatorio genuino
 **Evaluación del Modelo de Negocio:**
 Krash Depot tiene una sólida operación de retail físico anclada en una ventaja regulatoria (Zona Libre). La presencia online parece funcionar como un catálogo/folleto en lugar de un canal de ventas activo. Esto es una oportunidad perdida en un mercado donde el comercio digital mobile-first está creciendo rápidamente.
 
-**Ciclos de Crecimiento (Actuales):** Solo un ciclo de crecimiento detectable — tienda física → boca a boca → visita a la tienda. No se identificaron ciclos digitales.
+**Ciclos de Crecimiento (Actuales):** Dos ciclos detectables — (1) tienda física → boca a boca → visita a la tienda; (2) Instagram Reels → consulta por WhatsApp → venta, aunque este segundo ciclo no está formalizado ni medido.
 
 **Canales de Crecimiento Sin Explotar:**
 1. **SEO Turístico:** Paraguaná es descrita como "uno de los destinos turísticos de mayor crecimiento de Venezuela." Los turistas investigan compras antes de llegar — capturar este tráfico de búsqueda es una oportunidad de crecimiento de $0 de costo
-2. **Comercio por WhatsApp:** Venezuela tiene una penetración de WhatsApp extremadamente alta; un catálogo de WhatsApp Business formalizado + lista de difusión podría generar más de $5.000/mes en ventas directas
-3. **Instagram Shopping:** Etiquetado de productos + Reels mostrando productos con comparaciones de precios frente a mercados con IVA incluido es un formato probado para esta categoría
-4. **Retención por Email/SMS:** No hay evidencia de una base de datos de clientes o sistema de re-engagement — cada cliente pasado está siendo ignorado
+2. **Instagram Shopping + Reels:** La cuenta @krashdepot ya produce Reels con buena cadencia — falta etiquetado de productos, CTAs directos a WhatsApp en cada publicación y una frecuencia de publicación más sostenida
+3. **TikTok (@krashdepot):** Cuenta confirmada activa con contenido similar al de Instagram; canal con mayor potencial de alcance orgánico aún sin explotar a escala
+4. **Comercio por WhatsApp:** Venezuela tiene penetración de WhatsApp extremadamente alta; el contenido de TikTok/Instagram ya menciona WhatsApp como canal de venta, pero sin un embudo estructurado
+5. **Retención por Email/SMS:** No hay evidencia de una base de datos de clientes o sistema de re-engagement — cada cliente pasado está siendo ignorado
 
 **Riesgo Estratégico:** Si la ventaja regulatoria de la Zona Libre se debilita (cambio de política fiscal), Krash Depot no tendrá ningún foso de marketing al cual recurrir. Construir equidad de marca, autoridad de contenido y una base de datos de clientes ahora es un seguro contra ese escenario.
+
+---
+
+### Análisis de Redes Sociales — Instagram (@krashdepot)
+
+> ⚠️ **Nota metodológica:** Instagram devuelve HTTP 403 a rastreadores automatizados. El análisis se basa en contenido indexado por Google, snippets de búsqueda, posts en caché y la página de TikTok (@krashdepot). No se pudieron obtener métricas exactas de seguidores, reach ni engagement rate.
+
+**Presencia Confirmada:**
+- **Instagram:** [@krashdepot](https://www.instagram.com/krashdepot/) — cuenta activa con Reels regulares
+- **TikTok:** [@krashdepot](https://www.tiktok.com/@krashdepot) — cuenta activa, contenido espejado con Instagram
+- **X / Twitter:** [@KRASHDEPOT](https://x.com/krashdepot) — cuenta confirmada, actividad desconocida
+- **Facebook:** Tres páginas fragmentadas (`KrashDepotVenezuela`, `KRASHDEPOTVZLA`, `KRASH DEPOT S.A.`)
+
+**Tipos de Contenido Identificados en Instagram:**
+| Tipo de Contenido | Ejemplo Detectado | Evaluación |
+|---|---|---|
+| Identidad de marca | "Somos Krash Depot, donde lo encuentras todo" | Bien — establece propuesta central |
+| Giveaway / Concurso | Ganadora @orennysafl anunciada en Reel | Bien — genera engagement y prueba social |
+| Colaboración con influencer | Producción con @nazaret.oficial | Bien — amplía alcance con audiencias locales |
+| Expansión de marcas | "Nos hemos expandido para traerte más marcas" | Bien — refuerza amplitud de catálogo |
+| Integración Cashea (BNPL) | 3 posts sobre pago en cuotas con @somoscashea | Muy bien — diferenciador de conversión |
+| Descuentos y promociones | "Pregunta por tu descuento adicional vía WhatsApp" | Regular — CTA débil, no especifica el descuento |
+| Seguridad y garantía | "Krash Depot desea brindarte seguridad y tranquilidad" | Regular — mensaje vago, sin prueba concreta |
+| Nuevo sistema | Reel sobre "Nuevo Sistema" (contenido específico no accesible) | Sin datos |
+
+**Fortalezas de Instagram:**
+- Formato Reels adoptado correctamente — el formato de mayor alcance orgánico en Instagram
+- Colaboraciones con influencers locales generan credibilidad en el mercado de Paraguaná
+- Integración de Cashea muestra capacidad de adaptación a las realidades financieras venezolanas (pago en cuotas sin interés es un motivador de compra decisivo)
+- Tono de contenido variado: entretenimiento (giveaways), información (nuevas marcas) y conversión (descuentos, Cashea)
+- Menciona delivery gratuito en Punto Fijo — beneficio operacional real que pocos competidores ofrecen
+
+**Debilidades de Instagram:**
+- **CTAs inconsistentes:** Algunos posts dirigen a WhatsApp pero sin un mensaje pre-escrito estandarizado ni un número fijo visible en todos los posts
+- **Sin etiquetado de productos:** Los Reels muestran productos pero no permiten compra directa ni cotización con un toque — función disponible en Instagram Shopping gratuitamente
+- **Sin uso de Stories con frecuencia regular** (no detectadas en índice de búsqueda) — las Stories son el formato de mayor retención de audiencia existente
+- **Frecuencia de publicación desconocida** — los posts indexados abarcan un período extenso, sugiriendo cadencia irregular
+- **Hashtags:** No se detectó uso consistente de hashtags geolocalizados (`#PuntoFijo`, `#ZonaLibreParaguaná`, `#ElectrodomésticosVenezuela`) que maximizarían el descubrimiento orgánico local
+- **Sin Colecciones / Highlights** visibles que organicen el contenido por categoría de producto para visitantes nuevos
+- **Desconexión entre redes:** El mismo contenido en Instagram y TikTok indica ausencia de una estrategia diferenciada por plataforma
+
+**Hallazgo Clave — Cashea:**
+La integración de Cashea (compra ahora, paga después) es el hallazgo positivo más importante no cubierto en la auditoría inicial. En el contexto venezolano, donde la liquidez en USD puede ser una barrera para compras de $300–$2.000, el BNPL es un catalizador de conversión de primer orden. Sin embargo, esta integración no está comunicada de forma prominente en el sitio web — solo aparece en redes sociales, lo que limita su impacto.
+
+**Recomendaciones Específicas para Instagram:**
+1. Activar **Instagram Shopping** — etiquetar cada producto en cada Reel con precio y enlace a WhatsApp/producto
+2. Publicar **Stories diarias** con productos, precios y el CTA "Escríbenos" — formato de mayor visualización por audiencia existente
+3. Usar hashtag fijo en todos los posts: `#KrashDepot #ZonaLibreParaguaná #SinIVA #PuntoFijo #ElectrodomésticosVenezuela`
+4. Crear **Highlights** organizados: 📦 Productos / 💳 Cashea / 🚚 Delivery / ⭐ Reseñas / 📍 Visítanos
+5. Comunicar Cashea en el sitio web con la misma prominencia que en redes sociales
+6. Estandarizar CTA en todos los posts: botón de WhatsApp con número directo + mensaje pre-escrito
 
 ---
 
@@ -275,10 +330,16 @@ Krash Depot tiene una sólida operación de retail físico anclada en una ventaj
 | Efectividad del CTA | 3/10 | 9/10 | 7/10 | 5/10 |
 | Visibilidad SEO | 1/10 | 10/10 | 6/10 | 4/10 |
 | Experiencia Móvil | Desconocido | 9/10 | 7/10 | 5/10 |
-| Integración WhatsApp | Desconocido | 6/10 | 5/10 | 6/10 |
-| Profundidad de Contenido | 2/10 | 8/10 | 4/10 | 3/10 |
+| Integración WhatsApp | 5/10 ¹ | 6/10 | 5/10 | 6/10 |
+| Presencia en Instagram / Reels | 5/10 ² | 7/10 | 3/10 | 4/10 |
+| BNPL / Opciones de Pago Flex | 7/10 ³ | 8/10 | 4/10 | 5/10 |
+| Profundidad de Contenido | 3/10 | 8/10 | 4/10 | 3/10 |
 
-*La ventaja de producto físico y precios libres de impuestos de Krash Depot (7–8/10 en propuesta de valor) está siendo neutralizada por una visibilidad digital e infraestructura de confianza casi nulas.*
+¹ WhatsApp mencionado en contenido de redes sociales pero sin botón visible confirmado en el sitio web.
+² Instagram activo con Reels e influencers, pero sin etiquetado de productos ni Stories regulares.
+³ Integración de Cashea (BNPL) confirmada — diferenciador real frente a JVG y Damasco, pero comunicado solo en redes sociales, no en el sitio.
+
+*La ventaja de producto físico, precios libres de impuestos y la integración Cashea de Krash Depot representan diferenciadores reales. El talón de Aquiles sigue siendo la visibilidad SEO nula y la ausencia de prueba social (reseñas), que son las razones principales por las que Mercado Libre captura la demanda que debería ir a Krash Depot.*
 
 ---
 
@@ -310,4 +371,4 @@ Krash Depot tiene una sólida operación de retail físico anclada en una ventaj
 ---
 
 *Generado por AI Marketing Suite — `/market audit`*
-*Fuentes de datos: Contenido indexado en Google, listados en directorios (Foursquare, Infoguia, Wikimapia, promos.com.ve), LinkedIn, páginas públicas de Facebook, resultados de búsqueda web. El acceso directo al sitio fue bloqueado (HTTP 403); el análisis de contenido interno del sitio está parcialmente incompleto.*
+*Fuentes de datos: Contenido indexado en Google, listados en directorios (Foursquare, Infoguia, Wikimapia, promos.com.ve), LinkedIn, páginas públicas de Facebook, resultados de búsqueda web, snippets indexados de Instagram (@krashdepot), contenido público de TikTok (@krashdepot). El acceso directo al sitio web y a los perfiles de Instagram/X fue bloqueado (HTTP 403); el análisis de contenido interno del sitio y las métricas exactas de redes sociales (seguidores, engagement rate) están parcialmente incompletos.*
