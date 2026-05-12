@@ -1,73 +1,120 @@
 # Propuesta de Mascota: Krash Depot
-
-## Mascota Recomendada: **"Flami" — El Flamenco de la Zona Libre**
-
----
-
-### Concepto
-
-**Flami** es un flamenco rosado con actitud moderna y energía de buen negocio. Viste unos lentes de sol estilo retro, carga una bolsa de compras con el logo de Krash Depot y tiene un cartel pequeño que dice **"0% IVA"** colgado al cuello.
+## Alineada a la Identidad de Marca
 
 ---
 
-### Por Qué un Flamenco
-
-| Razón | Detalle |
-|-------|---------|
-| **Identidad local** | Los flamencos rosados son nativos de Paraguaná — habitan la Laguna de los Flamencos, un ícono de la región |
-| **Libre por naturaleza** | Un flamenco vuela libre, igual que los precios en la Zona Libre: sin impuestos, sin cadenas |
-| **Memorable y único** | Ningún retailer venezolano usa un flamenco — diferenciación visual inmediata |
-| **Familia y alegría** | Los flamencos evocan colores vibrantes y buen humor, tono perfecto para compras de hogar |
-| **Versatilidad visual** | Funciona en emojis 🦩, redes sociales, bolsas, uniformes, publicidad y el sitio web |
+## Mascota Recomendada: **"KRAS" — El Rompeprecios**
 
 ---
 
-### Nombre y Tagline Asociado
+### Concepto Central
 
-> **"Flami, el flamenco sin impuestos."**
-> *"¡Con Flami, tu plata vuela más lejos!"*
+El nombre **KRASH DEPOT** ya contiene la mascota: un personaje que **rompe** (krash) precios desde un **almacén** (depot) de escala industrial. **KRAS** es un trabajador de bodega musculoso pero amigable, siempre en movimiento, con una llave inglesa en mano y etiquetas de precio rompiéndose a su alrededor. No es suave ni decorativo — es **poderoso, directo y venezolano**.
 
----
-
-### Personalidad de la Mascota
-
-- **Tono:** Amigable, seguro, un poco pícaro — como ese familiar que siempre sabe dónde hay una oferta
-- **Valores que encarna:** Ahorro real, calidad, libertad financiera
-- **Audiencia que conecta:** Familias venezolanas, turistas que visitan Paraguaná, compradores de primera vez
+> **La mascota no es un adorno de marca. ES la marca hecha personaje.**
 
 ---
 
-### Usos Recomendados
+### Por Qué "KRAS" Nace del ADN de la Marca
 
-1. **WhatsApp Business** — avatar del número oficial de ventas
-2. **Instagram/Facebook** — personaje recurrente en Reels y Stories ("Flami recomienda el Samsung de la semana")
-3. **Sitio web** — botón flotante de chat: "¡Hola! Soy Flami, ¿en qué te ayudo?"
-4. **Bolsas y packaging** — refuerza la identidad de marca en cada compra física
-5. **Señalización en tienda** — carteles de sección con Flami señalando ofertas
-6. **Anuncios Meta** — personaje animado en videos cortos comparando precios con y sin IVA
-
----
-
-### Opciones Alternativas Evaluadas
-
-| Mascota | Pro | Contra |
-|---------|-----|--------|
-| **Cóndor** | Majestuoso, venezolano | Pesado, no comunica ahorro ni alegría |
-| **Chivo de Paraguaná** | Muy local | Connotaciones mixtas en el mercado |
-| **Personaje humano genérico** | Relatable | Sin diferenciación, costoso de animar |
-| **Rayo/Descarga eléctrica** | Comunica electrónica | Agresivo, no transmite confianza |
-
-**Flami supera a todas las alternativas** por combinar identidad geográfica auténtica, conexión emocional positiva y versatilidad de marca.
+| Elemento de Marca | Qué comunica | Cómo lo encarna KRAS |
+|-------------------|-------------|----------------------|
+| **"KRASH"** — con K | Impacto, ruptura, energía disruptiva | Su acción principal: romper etiquetas de precio |
+| **"DEPOT"** | Almacén industrial, escala masiva, abundancia | Uniforme de bodega, hardhat, ambiente de tienda grande |
+| **Zona Libre / 0% IVA** | Ahorro real de 16%, ventaja imbatible | El escudo en su pecho: **"KD 0% IVA"** |
+| **Electrónica y electrodomésticos** | Tecnología, energía, modernidad | Rayo eléctrico integrado en su logo; energía visual |
+| **3.000 m² — la más grande** | Poder, dominio del mercado | Tamaño y postura de autoridad en la categoría |
 
 ---
 
-### Implementación Sugerida (Primeros 30 días)
+### Descripción Visual
 
-1. **Semana 1:** Diseñar el avatar base de Flami (ilustrador freelance, ~$150–300 USD)
-2. **Semana 2:** Adoptar Flami como foto de perfil de WhatsApp Business e Instagram
-3. **Semana 3:** Publicar una Story de presentación: *"¡Hola Paraguaná! Soy Flami, el nuevo embajador de Krash Depot 🦩 ¡Sin IVA y con todo el estilo!"*
-4. **Semana 4:** Usar Flami en el primer Reel de comparación de precios
+**KRAS** es un personaje masculino/antropomórfico de complexión fuerte, energía de acción y expresión confiada:
+
+- **Casco naranja** con el rayo "KD" grabado — referencia directa a Depot/bodega
+- **Overol azul marino** con mangas arremangadas — worker aesthetic, honesto, fuerte
+- **Escudo en el pecho** con el texto: `KD | 0% IVA`
+- **Llave inglesa en la mano** — la herramienta que "arregla" los precios altos
+- **Etiquetas de precio rompiéndose** alrededor de él en cada acción — el krash visual
+- **Expresión:** Ceja levantada, sonrisa segura — sabe que tiene el mejor precio
+
+**Paleta de colores del personaje:**
+| Color | Hex | Uso |
+|-------|-----|-----|
+| Naranja Krash | `#FF6B00` | Casco, acentos de energía |
+| Azul Depot | `#003A8C` | Uniforme, fondos oscuros |
+| Amarillo Voltaje | `#FFD700` | Rayo KD, detalles de acción |
+| Blanco Precio | `#FFFFFF` | Etiquetas, textos de ahorro |
+| Negro Contorno | `#1A1A1A` | Bordes de ilustración |
+
+---
+
+### Por Qué "KRAS" Supera a Cualquier Alternativa Regional
+
+La mascota anterior (un flamenco) conectaba con la geografía de Paraguaná pero **ignoraba por completo el nombre de la marca**. Una mascota que no refleja el nombre es una oportunidad desperdiciada.
+
+| Criterio | Flamenco | KRAS |
+|----------|----------|------|
+| Refleja el nombre "KRASH" | ✗ | ✓ |
+| Comunica impacto en precios | ✗ | ✓ |
+| Transmite escala (DEPOT) | ✗ | ✓ |
+| Conecta con electrónica/energía | ✗ | ✓ |
+| Tono bold y directo de la marca | ✗ | ✓ |
+| Memorabilidad en redes sociales | Medio | Alto |
+| Identidad local de Paraguaná | ✓ | Neutro |
+
+> **Conclusión:** KRAS pierde un punto en identidad geográfica local, pero gana en todo lo que hace a una marca cohesiva y diferenciada en retail.
+
+---
+
+### Personalidad de KRAS
+
+- **Arquetipo:** El Héroe del Consumidor — el que pelea contra los precios altos
+- **Voz:** Directa, confiada, un poco irreverente — "los precios de afuera están locos, nosotros no"
+- **Lema:** *"Yo le bajo el precio a lo que sea."*
+- **Acción característica:** Aparece rompiendo una etiqueta de precio cara y reemplazándola por una más baja con el logo KD
+
+---
+
+### Usos Estratégicos
+
+**Redes Sociales:**
+- Post de oferta: KRAS sosteniendo el producto con el precio "roto" encima
+- Story de urgencia: KRAS corriendo con un reloj de cuenta regresiva
+- Reels: Animación de KRAS destruyendo el precio de un competidor
+
+**WhatsApp Business:**
+- Avatar: busto de KRAS con el casco naranja y expresión de "¿en qué te ayudo?"
+- Respuesta automática: *"¡Hola! Soy KRAS, el que te consigue el mejor precio de Paraguaná. ¿Qué necesitas?"*
+
+**Sitio Web:**
+- Botón flotante de chat animado con KRAS haciendo señas
+- Banner de homepage: KRAS rompiendo una pared con el mensaje "Sin IVA, sin excusas"
+
+**Tienda Física:**
+- Figura de cartón de tamaño real en la entrada señalando la oferta del día
+- Señalización de pasillos con KRAS indicando categorías
+- Bolsas de compra con KRAS en acción
+
+**Publicidad Meta:**
+- Video de 6 segundos: KRAS rompe una pantalla con el precio del competidor → aparece el precio KD
+- Formato carrusel: KRAS "viajando" por cada departamento de la tienda
+
+---
+
+### Plan de Implementación — 30 Días
+
+| Semana | Acción | Costo Estimado |
+|--------|--------|----------------|
+| 1 | Diseño del personaje base (3 poses: acción, saludo, apuntando) | $200–$400 USD |
+| 2 | Pack de stickers para WhatsApp Business (6 stickers) | $50–$100 USD |
+| 3 | Lanzamiento: Post de presentación + Reel de introducción | $0 (contenido orgánico) |
+| 4 | Primer anuncio Meta con KRAS rompiendo precio de producto estrella | $200–$500 USD (ad spend) |
+
+**Inversión total semana 1–4: ~$450–$1.000 USD**
+**ROI esperado: 10–20x en conversión de anuncios vs. creatividades genéricas**
 
 ---
 
 *Propuesta generada para Krash Depot — Zona Libre de Paraguaná, Venezuela*
+*Análisis de identidad de marca basado en Auditoría de Marketing — Mayo 2026*

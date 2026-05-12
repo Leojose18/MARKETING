@@ -5,422 +5,664 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Propuesta de Mascota — Krash Depot</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --orange:  #FF6B00;
+      --blue:    #003A8C;
+      --yellow:  #FFD700;
+      --white:   #FFFFFF;
+      --dark:    #1A1A1A;
+      --bg:      #F0F2F8;
+      --card:    #FFFFFF;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #f4f6fb;
-      color: #1a1a2e;
-      line-height: 1.7;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.65;
     }
 
     /* ── HEADER ── */
     header {
-      background: linear-gradient(135deg, #d63384 0%, #ff6b9d 50%, #ffb347 100%);
-      color: #fff;
-      padding: 60px 40px 50px;
-      text-align: center;
-      position: relative;
+      background: var(--blue);
+      color: var(--white);
+      padding: 0;
       overflow: hidden;
+      position: relative;
     }
-    header::before {
-      content: '🦩';
-      font-size: 120px;
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 40px 48px;
+      position: relative;
+      z-index: 2;
+    }
+    .header-bg-text {
       position: absolute;
-      right: 60px;
+      right: -20px;
       top: 50%;
       transform: translateY(-50%);
-      opacity: 0.25;
+      font-size: 220px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      letter-spacing: -10px;
+      user-select: none;
+      z-index: 1;
     }
-    header .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: 20px;
-      padding: 4px 16px;
-      font-size: 13px;
-      letter-spacing: 1px;
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,107,0,0.2);
+      border: 1px solid rgba(255,107,0,0.5);
+      border-radius: 100px;
+      padding: 5px 16px 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      color: var(--orange);
+      margin-bottom: 20px;
     }
+    .brand-pill span { font-size: 18px; }
     header h1 {
-      font-size: 42px;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 12px;
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 10px;
     }
-    header h1 span { color: #fff3; }
-    header p.subtitle {
-      font-size: 18px;
-      opacity: 0.9;
+    header h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    header h1 sup {
+      font-size: 28px;
+      color: var(--yellow);
+      vertical-align: super;
+    }
+    header p.sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+    }
+    .header-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--orange), var(--yellow));
     }
 
     /* ── LAYOUT ── */
     main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 24px 60px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
     }
 
-    /* ── HERO CARD ── */
-    .hero-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 40px;
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--orange);
+      margin-bottom: 14px;
+      margin-top: 48px;
       display: flex;
       align-items: center;
-      gap: 36px;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
-      margin-bottom: 36px;
+      gap: 10px;
     }
-    .hero-emoji {
-      font-size: 96px;
-      flex-shrink: 0;
-      filter: drop-shadow(0 4px 12px rgba(214,51,132,0.3));
-    }
-    .hero-card h2 {
-      font-size: 28px;
-      font-weight: 800;
-      color: #d63384;
-      margin-bottom: 8px;
-    }
-    .hero-card p { font-size: 15px; color: #555; }
-    .tagline {
-      margin-top: 16px;
-      background: linear-gradient(135deg, #fff0f7, #fff8f0);
-      border-left: 4px solid #d63384;
-      border-radius: 0 10px 10px 0;
-      padding: 12px 18px;
-      font-style: italic;
-      font-size: 15px;
-      color: #333;
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #E0E4EE;
     }
 
-    /* ── SECTION TITLES ── */
-    h3.section-title {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #d63384;
-      margin-bottom: 16px;
-      margin-top: 40px;
-    }
-
-    /* ── REASON GRID ── */
-    .reason-grid {
+    /* ── HERO CONCEPT ── */
+    .concept-block {
+      background: var(--dark);
+      border-radius: 20px;
+      padding: 0;
+      overflow: hidden;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
-      margin-bottom: 36px;
+      grid-template-columns: 1fr 2fr;
+      margin-bottom: 12px;
     }
-    .reason-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      border-top: 3px solid #d63384;
-    }
-    .reason-card .icon { font-size: 26px; margin-bottom: 10px; }
-    .reason-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
-    .reason-card p { font-size: 13px; color: #666; }
-
-    /* ── PERSONALITY BOX ── */
-    .personality {
-      background: linear-gradient(135deg, #1a1a2e, #2d2d5e);
-      color: #fff;
-      border-radius: 16px;
-      padding: 30px 36px;
-      margin-bottom: 36px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
-    }
-    .personality .item label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #ffb347;
-      display: block;
-      margin-bottom: 6px;
-    }
-    .personality .item p { font-size: 14px; color: #e0e0f0; }
-
-    /* ── USE CASES ── */
-    .use-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 36px;
-    }
-    .use-item {
-      background: #fff;
-      border-radius: 12px;
-      padding: 18px 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .use-item .num {
-      background: #d63384;
-      color: #fff;
-      border-radius: 50%;
-      width: 28px;
-      height: 28px;
+    .concept-visual {
+      background: linear-gradient(160deg, var(--orange), #FF3D00);
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 48px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .concept-visual::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      bottom: -60px;
+      left: -40px;
+    }
+    .kras-avatar {
+      font-size: 90px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+    }
+    .kras-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--yellow);
+      color: var(--dark);
+      font-size: 11px;
+      font-weight: 900;
+      border-radius: 8px;
+      padding: 4px 10px;
+      letter-spacing: 0.5px;
+    }
+    .concept-text {
+      padding: 40px 36px;
+      color: var(--white);
+    }
+    .concept-text h2 {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .concept-text h2 span { color: var(--orange); }
+    .concept-text .role {
       font-size: 13px;
       font-weight: 700;
-      flex-shrink: 0;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
     }
-    .use-item div h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-    .use-item div p { font-size: 13px; color: #666; }
+    .concept-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .lema-box {
+      background: rgba(255,107,0,0.15);
+      border: 1px solid rgba(255,107,0,0.4);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--white);
+    }
+    .lema-box strong { color: var(--orange); font-style: normal; }
 
-    /* ── ALTERNATIVES TABLE ── */
-    table {
+    /* ── ADN TABLE ── */
+    .adn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .adn-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 22px;
+      border-left: 4px solid var(--orange);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .adn-card .element {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+    .adn-card .meaning {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+    .adn-card p { font-size: 13px; color: #555; }
+
+    /* ── VISUAL DESCRIPTION ── */
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .visual-item {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .visual-item .vi-icon { font-size: 28px; margin-bottom: 8px; }
+    .visual-item h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; color: var(--dark); }
+    .visual-item p { font-size: 11px; color: #777; }
+
+    /* ── COLOR PALETTE ── */
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .swatch-color { height: 70px; }
+    .swatch-info {
+      background: var(--card);
+      padding: 10px 12px;
+    }
+    .swatch-info .sname { font-size: 12px; font-weight: 700; color: var(--dark); }
+    .swatch-info .shex { font-size: 11px; color: #999; font-family: monospace; }
+
+    /* ── COMPARISON ── */
+    .compare-table {
       width: 100%;
       border-collapse: collapse;
-      background: #fff;
-      border-radius: 14px;
+      background: var(--card);
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      margin-bottom: 36px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+      margin-bottom: 12px;
     }
-    thead { background: #1a1a2e; color: #fff; }
-    thead th { padding: 14px 18px; font-size: 13px; text-align: left; }
-    tbody tr { border-bottom: 1px solid #f0f0f0; }
-    tbody tr:last-child { border-bottom: none; }
-    tbody td { padding: 13px 18px; font-size: 13px; color: #444; }
-    tbody tr.winner { background: #fff5fa; }
-    tbody tr.winner td:first-child { font-weight: 700; color: #d63384; }
-    .pro { color: #16a34a; }
-    .con { color: #dc2626; }
+    .compare-table thead {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .compare-table thead th {
+      padding: 14px 20px;
+      font-size: 13px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .compare-table thead th:nth-child(2) { background: rgba(255,107,0,0.3); }
+    .compare-table thead th:nth-child(3) { background: rgba(255,215,0,0.15); }
+    .compare-table tbody tr { border-bottom: 1px solid #F0F2F8; }
+    .compare-table tbody tr:last-child { border-bottom: none; }
+    .compare-table tbody td {
+      padding: 13px 20px;
+      font-size: 13px;
+      color: #444;
+    }
+    .compare-table tbody td:first-child { font-weight: 600; color: var(--dark); }
+    .tick { color: #16a34a; font-weight: 700; }
+    .cross { color: #dc2626; font-weight: 700; }
+    .mid { color: #d97706; font-weight: 700; }
+
+    /* ── USES ── */
+    .uses-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .use-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .use-card .uc-icon { font-size: 26px; margin-bottom: 10px; }
+    .use-card h4 {
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .use-card p { font-size: 13px; color: #555; line-height: 1.55; }
+    .use-card .example {
+      margin-top: 10px;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--orange);
+      background: #FFF5EE;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
 
     /* ── TIMELINE ── */
-    .timeline { margin-bottom: 36px; }
-    .timeline-item {
-      display: flex;
+    .timeline { margin-bottom: 12px; }
+    .tl-row {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
       gap: 20px;
-      margin-bottom: 18px;
-      align-items: flex-start;
+      align-items: center;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
-    .week-badge {
-      background: #d63384;
-      color: #fff;
+    .tl-week {
+      background: var(--blue);
+      color: var(--white);
       border-radius: 8px;
-      padding: 6px 12px;
+      padding: 8px 12px;
       font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .tl-week span { display: block; font-size: 18px; color: var(--yellow); }
+    .tl-text h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .tl-text p { font-size: 13px; color: #666; }
+    .tl-cost {
+      background: #F0F9F0;
+      color: #16a34a;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
       font-weight: 700;
       white-space: nowrap;
-      flex-shrink: 0;
     }
-    .timeline-item p { font-size: 14px; color: #444; padding-top: 6px; }
-    .timeline-item p strong { color: #1a1a2e; }
 
     /* ── FOOTER ── */
     footer {
       text-align: center;
       font-size: 12px;
       color: #aaa;
-      margin-top: 20px;
+      margin-top: 40px;
+      padding-bottom: 20px;
     }
 
-    /* ── PRINT / PDF ── */
+    /* ── PRINT ── */
     @media print {
       body { background: #fff; }
-      header::before { display: none; }
-      .reason-card, .use-item, table { box-shadow: none; border: 1px solid #eee; }
+      .concept-block, .adn-card, .use-card, .tl-row { box-shadow: none !important; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="badge">Propuesta de Branding · Krash Depot</div>
-  <h1>Conoce a <span>"</span>Flami<span>"</span><br>El Flamenco de la Zona Libre</h1>
-  <p class="subtitle">Mascota oficial para Krash Depot — Paraguaná, Venezuela</p>
+  <div class="header-bg-text">KRAS</div>
+  <div class="header-inner">
+    <div class="brand-pill"><span>⚡</span> Propuesta de Mascota · Krash Depot</div>
+    <h1>Conoce a <em>KRAS</em><sup>™</sup></h1>
+    <p class="sub">El Rompeprecios de la Zona Libre — mascota diseñada desde el ADN de la marca KRASH DEPOT</p>
+  </div>
+  <div class="header-accent"></div>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <div class="hero-card">
-    <div class="hero-emoji">🦩</div>
-    <div>
-      <h2>Flami — El Flamenco Sin Impuestos</h2>
+  <!-- CONCEPTO CENTRAL -->
+  <div class="section-label">Concepto Central</div>
+  <div class="concept-block">
+    <div class="concept-visual">
+      <div class="kras-avatar">👷</div>
+      <div class="kras-badge">KD | 0% IVA</div>
+    </div>
+    <div class="concept-text">
+      <div class="role">El Rompeprecios · Mascota Oficial</div>
+      <h2>KRAS <span>el Rompeprecios</span></h2>
       <p>
-        Un flamenco rosado con lentes de sol retro, bolsa de compras con el logo de Krash Depot
-        y un cartel al cuello que dice <strong>"0% IVA"</strong>. Energía de buen negocio,
-        actitud moderna, 100% Paraguaná.
+        Un trabajador de bodega musculoso y amigable, siempre en movimiento. Casco naranja con el rayo "KD",
+        overol azul marino con mangas arremangadas, llave inglesa en mano y etiquetas de precio
+        <strong style="color:#FF6B00">rompiéndose a su alrededor</strong>. No es suave ni decorativo:
+        es poderoso, directo y venezolano.
       </p>
-      <div class="tagline">
-        💬 <em>"¡Con Flami, tu plata vuela más lejos!"</em>
+      <div class="lema-box">
+        💬 <strong>Lema de KRAS:</strong> <em>"Yo le bajo el precio a lo que sea."</em>
       </div>
     </div>
   </div>
 
-  <!-- POR QUÉ UN FLAMENCO -->
-  <h3 class="section-title">Por qué un Flamenco</h3>
-  <div class="reason-grid">
-    <div class="reason-card">
-      <div class="icon">📍</div>
-      <h4>Identidad Local Auténtica</h4>
-      <p>Los flamencos rosados habitan la Laguna de los Flamencos en Paraguaná. No hay mascota más propia de la región.</p>
+  <!-- ADN DE MARCA -->
+  <div class="section-label">KRAS nace del ADN de la Marca</div>
+  <div class="adn-grid">
+    <div class="adn-card">
+      <div class="element">Elemento de marca</div>
+      <div class="meaning">"KRASH" con K</div>
+      <p>Impacto, ruptura, energía disruptiva. Su acción principal: romper etiquetas de precio cara con cada aparición.</p>
     </div>
-    <div class="reason-card">
-      <div class="icon">🕊️</div>
-      <h4>Libre por Naturaleza</h4>
-      <p>Un flamenco que vuela libre conecta directamente con el posicionamiento de Zona Libre: sin IVA, sin cadenas.</p>
+    <div class="adn-card">
+      <div class="element">Elemento de marca</div>
+      <div class="meaning">"DEPOT" — Almacén</div>
+      <p>Escala industrial, abundancia. El casco y overol de bodega de KRAS hacen la referencia inmediata.</p>
     </div>
-    <div class="reason-card">
-      <div class="icon">⭐</div>
-      <h4>Memorable y Único</h4>
-      <p>Ningún retailer venezolano usa un flamenco como mascota — diferenciación visual inmediata en el mercado.</p>
+    <div class="adn-card">
+      <div class="element">Elemento de marca</div>
+      <div class="meaning">Zona Libre · 0% IVA</div>
+      <p>El escudo "KD 0% IVA" en su pecho es la ventaja competitiva hecha visual — nadie más la tiene.</p>
     </div>
-    <div class="reason-card">
-      <div class="icon">👨‍👩‍👧</div>
-      <h4>Familia y Alegría</h4>
-      <p>Los flamencos evocan colores vibrantes y buen humor — tono perfecto para compras del hogar.</p>
-    </div>
-    <div class="reason-card">
-      <div class="icon">🎨</div>
-      <h4>Versátil Visualmente</h4>
-      <p>Funciona en emojis 🦩, redes sociales, bolsas, uniformes, publicidad y el sitio web sin perder impacto.</p>
+    <div class="adn-card">
+      <div class="element">Elemento de marca</div>
+      <div class="meaning">Electrónica y Energía</div>
+      <p>El rayo eléctrico en su logo y los destellos de acción conectan con la categoría de producto.</p>
     </div>
   </div>
 
-  <!-- PERSONALIDAD -->
-  <h3 class="section-title">Personalidad de la Mascota</h3>
-  <div class="personality">
-    <div class="item">
-      <label>Tono</label>
-      <p>Amigable, seguro, un poco pícaro — como ese familiar que siempre sabe dónde hay una oferta.</p>
+  <!-- DESCRIPCIÓN VISUAL -->
+  <div class="section-label">Descripción Visual del Personaje</div>
+  <div class="visual-grid">
+    <div class="visual-item">
+      <div class="vi-icon">🪖</div>
+      <h4>Casco Naranja</h4>
+      <p>Rayo "KD" grabado. Referencia directa al Depot.</p>
     </div>
-    <div class="item">
-      <label>Valores</label>
-      <p>Ahorro real, calidad de marca, libertad financiera, orgullo regional.</p>
+    <div class="visual-item">
+      <div class="vi-icon">👔</div>
+      <h4>Overol Azul</h4>
+      <p>Mangas arremangadas. Worker aesthetic: honesto y fuerte.</p>
     </div>
-    <div class="item">
-      <label>Audiencia</label>
-      <p>Familias venezolanas, turistas en Paraguaná, compradores de electrodomésticos por primera vez.</p>
+    <div class="visual-item">
+      <div class="vi-icon">🛡️</div>
+      <h4>Escudo KD</h4>
+      <p>"KD | 0% IVA" en el pecho. La propuesta de valor hecha identidad.</p>
     </div>
-  </div>
-
-  <!-- USOS -->
-  <h3 class="section-title">Usos Recomendados</h3>
-  <div class="use-list">
-    <div class="use-item">
-      <div class="num">1</div>
-      <div>
-        <h4>WhatsApp Business</h4>
-        <p>Avatar del número oficial de ventas. Primer punto de contacto para cientos de clientes diarios.</p>
-      </div>
+    <div class="visual-item">
+      <div class="vi-icon">🔧</div>
+      <h4>Llave Inglesa</h4>
+      <p>La herramienta que "arregla" los precios altos del mercado.</p>
     </div>
-    <div class="use-item">
-      <div class="num">2</div>
-      <div>
-        <h4>Instagram & Facebook</h4>
-        <p>Personaje recurrente en Reels y Stories. <em>"Flami recomienda el Samsung de la semana."</em></p>
-      </div>
-    </div>
-    <div class="use-item">
-      <div class="num">3</div>
-      <div>
-        <h4>Sitio Web — Chat Flotante</h4>
-        <p><em>"¡Hola! Soy Flami, ¿en qué te ayudo?"</em> — botón de WhatsApp animado con la mascota.</p>
-      </div>
-    </div>
-    <div class="use-item">
-      <div class="num">4</div>
-      <div>
-        <h4>Bolsas y Packaging</h4>
-        <p>Refuerza la identidad de marca en cada compra física. Marketing gratis en cada salida de tienda.</p>
-      </div>
-    </div>
-    <div class="use-item">
-      <div class="num">5</div>
-      <div>
-        <h4>Señalización en Tienda</h4>
-        <p>Carteles de sección con Flami señalando ofertas y productos destacados del mes.</p>
-      </div>
-    </div>
-    <div class="use-item">
-      <div class="num">6</div>
-      <div>
-        <h4>Anuncios Meta (Facebook/Instagram)</h4>
-        <p>Flami animado comparando precios con IVA vs. sin IVA. Formato probado para impulsar conversión.</p>
-      </div>
+    <div class="visual-item">
+      <div class="vi-icon">🏷️</div>
+      <h4>Tags Rotos</h4>
+      <p>Etiquetas de precio partiéndose a su alrededor. El "krash" visual.</p>
     </div>
   </div>
 
-  <!-- ALTERNATIVAS -->
-  <h3 class="section-title">Alternativas Evaluadas</h3>
-  <table>
+  <!-- PALETA -->
+  <div class="section-label">Paleta de Colores del Personaje</div>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FF6B00;"></div>
+      <div class="swatch-info">
+        <div class="sname">Naranja Krash</div>
+        <div class="shex">#FF6B00</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#003A8C;"></div>
+      <div class="swatch-info">
+        <div class="sname">Azul Depot</div>
+        <div class="shex">#003A8C</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFD700;"></div>
+      <div class="swatch-info">
+        <div class="sname">Amarillo Voltaje</div>
+        <div class="shex">#FFD700</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFFFFF; border: 1px solid #eee;"></div>
+      <div class="swatch-info">
+        <div class="sname">Blanco Precio</div>
+        <div class="shex">#FFFFFF</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1A1A1A;"></div>
+      <div class="swatch-info">
+        <div class="sname">Negro Contorno</div>
+        <div class="shex">#1A1A1A</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARACIÓN -->
+  <div class="section-label">KRAS vs. Mascota Anterior (Flamenco)</div>
+  <table class="compare-table">
     <thead>
       <tr>
-        <th>Mascota</th>
-        <th>Ventaja</th>
-        <th>Desventaja</th>
+        <th>Criterio de Alineación</th>
+        <th>🦩 Flamenco</th>
+        <th>⚡ KRAS</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="winner">
-        <td>🦩 Flami el Flamenco</td>
-        <td class="pro">Local, libre, colorido, versátil, único en el mercado</td>
-        <td>—</td>
+      <tr>
+        <td>Refleja el nombre "KRASH"</td>
+        <td><span class="cross">✗ No</span></td>
+        <td><span class="tick">✓ Sí — su acción es el "krash"</span></td>
       </tr>
       <tr>
-        <td>🦅 Cóndor</td>
-        <td class="pro">Majestuoso, venezolano</td>
-        <td class="con">Pesado, no comunica ahorro ni alegría</td>
+        <td>Comunica impacto en precios</td>
+        <td><span class="cross">✗ No</span></td>
+        <td><span class="tick">✓ Rompe etiquetas de precio</span></td>
       </tr>
       <tr>
-        <td>🐐 Chivo de Paraguaná</td>
-        <td class="pro">Muy local, reconocible</td>
-        <td class="con">Connotaciones mixtas en el mercado</td>
+        <td>Transmite escala "DEPOT"</td>
+        <td><span class="cross">✗ No</span></td>
+        <td><span class="tick">✓ Casco + overol de bodega</span></td>
       </tr>
       <tr>
-        <td>👤 Personaje Humano</td>
-        <td class="pro">Relatable, directo</td>
-        <td class="con">Sin diferenciación, costoso de animar</td>
+        <td>Conecta con electrónica/energía</td>
+        <td><span class="cross">✗ No</span></td>
+        <td><span class="tick">✓ Rayo eléctrico en logo</span></td>
       </tr>
       <tr>
-        <td>⚡ Rayo / Descarga</td>
-        <td class="pro">Comunica energía y electrónica</td>
-        <td class="con">Agresivo, no transmite confianza familiar</td>
+        <td>Tono bold y directo de la marca</td>
+        <td><span class="cross">✗ Suave</span></td>
+        <td><span class="tick">✓ Poderoso y directo</span></td>
+      </tr>
+      <tr>
+        <td>Memorabilidad en redes sociales</td>
+        <td><span class="mid">~ Medio</span></td>
+        <td><span class="tick">✓ Alto — único en retail VE</span></td>
+      </tr>
+      <tr>
+        <td>Identidad geográfica de Paraguaná</td>
+        <td><span class="tick">✓ Sí</span></td>
+        <td><span class="mid">~ Neutro (no es necesaria)</span></td>
       </tr>
     </tbody>
   </table>
 
+  <!-- USOS -->
+  <div class="section-label">Usos Estratégicos de KRAS</div>
+  <div class="uses-grid">
+    <div class="use-card">
+      <div class="uc-icon">💬</div>
+      <h4>WhatsApp Business</h4>
+      <p>Avatar del número oficial. Primer contacto con cientos de clientes al día.</p>
+      <div class="example">"¡Hola! Soy KRAS, el que te consigue el mejor precio de Paraguaná. ¿Qué necesitas?"</div>
+    </div>
+    <div class="use-card">
+      <div class="uc-icon">📱</div>
+      <h4>Instagram & Facebook</h4>
+      <p>KRAS sosteniendo el producto con el precio "roto" encima. Post de oferta semana.</p>
+      <div class="example">Reel: KRAS destruye precio de competidor → aparece precio KD</div>
+    </div>
+    <div class="use-card">
+      <div class="uc-icon">🌐</div>
+      <h4>Sitio Web</h4>
+      <p>Botón flotante de chat animado. Banner de homepage con KRAS rompiendo una pared.</p>
+      <div class="example">"Sin IVA, sin excusas" — KRAS atravesando una pared de precios altos</div>
+    </div>
+    <div class="use-card">
+      <div class="uc-icon">🏪</div>
+      <h4>Tienda Física</h4>
+      <p>Figura de cartón tamaño real en la entrada. Señalización de pasillos por categoría.</p>
+      <div class="example">KRAS señalando "Refrigeradoras →" o "Ofertas del mes ↓"</div>
+    </div>
+    <div class="use-card">
+      <div class="uc-icon">🛍️</div>
+      <h4>Bolsas & Packaging</h4>
+      <p>KRAS en acción en cada bolsa de compra. Marketing gratuito en cada salida de tienda.</p>
+      <div class="example">Bolsa naranja con KRAS sosteniendo un electrodoméstico y precio roto</div>
+    </div>
+    <div class="use-card">
+      <div class="uc-icon">📢</div>
+      <h4>Anuncios Meta</h4>
+      <p>KRAS animado en video de 6 segundos comparando precios con y sin IVA.</p>
+      <div class="example">Formato carrusel: KRAS "viajando" por cada departamento de la tienda</div>
+    </div>
+  </div>
+
   <!-- TIMELINE -->
-  <h3 class="section-title">Plan de Implementación — Primeros 30 Días</h3>
+  <div class="section-label">Plan de Implementación — 30 Días</div>
   <div class="timeline">
-    <div class="timeline-item">
-      <div class="week-badge">Semana 1</div>
-      <p><strong>Diseño del avatar base de Flami.</strong> Contratar un ilustrador freelance (~$150–300 USD). Definir versiones: cuerpo completo, busto, icono redondo para redes.</p>
+    <div class="tl-row">
+      <div class="tl-week">SEMANA<span>1</span></div>
+      <div class="tl-text">
+        <h4>Diseño del personaje base</h4>
+        <p>3 poses esenciales: acción (rompiendo precio), saludo (para WhatsApp) y apuntando (para señalización). Ilustrador freelance.</p>
+      </div>
+      <div class="tl-cost">$200–$400</div>
     </div>
-    <div class="timeline-item">
-      <div class="week-badge">Semana 2</div>
-      <p><strong>Adoptar Flami en todos los perfiles digitales.</strong> WhatsApp Business, Instagram, Facebook (cuenta unificada) y sitio web.</p>
+    <div class="tl-row">
+      <div class="tl-week">SEMANA<span>2</span></div>
+      <div class="tl-text">
+        <h4>Pack de stickers para WhatsApp Business</h4>
+        <p>6 stickers animados de KRAS: saludo, oferta, aprobación, sorpresa, celebración, Zona Libre.</p>
+      </div>
+      <div class="tl-cost">$50–$100</div>
     </div>
-    <div class="timeline-item">
-      <div class="week-badge">Semana 3</div>
-      <p><strong>Lanzamiento en redes sociales.</strong> Story de presentación: <em>"¡Hola Paraguaná! Soy Flami, el nuevo embajador de Krash Depot 🦩 ¡Sin IVA y con todo el estilo!"</em></p>
+    <div class="tl-row">
+      <div class="tl-week">SEMANA<span>3</span></div>
+      <div class="tl-text">
+        <h4>Lanzamiento en redes sociales</h4>
+        <p>Post de presentación + Reel de introducción de KRAS. Contenido 100% orgánico.</p>
+      </div>
+      <div class="tl-cost">$0</div>
     </div>
-    <div class="timeline-item">
-      <div class="week-badge">Semana 4</div>
-      <p><strong>Primer Reel de comparación de precios.</strong> Flami animado mostrando el ahorro del 16% de IVA en productos concretos (TV, nevera, aire acondicionado).</p>
+    <div class="tl-row">
+      <div class="tl-week">SEMANA<span>4</span></div>
+      <div class="tl-text">
+        <h4>Primer anuncio Meta con KRAS</h4>
+        <p>Video corto de KRAS rompiendo el precio de un producto estrella (TV, nevera o AC). Segmentado a turistas en Falcón.</p>
+      </div>
+      <div class="tl-cost">$200–$500</div>
     </div>
   </div>
 
 </main>
 
 <footer>
-  <p>Propuesta generada para <strong>Krash Depot</strong> · Zona Libre de Paraguaná, Venezuela · 2026</p>
+  <p>
+    Propuesta generada para <strong>Krash Depot</strong> · Zona Libre de Paraguaná, Venezuela · 2026<br>
+    Análisis basado en Auditoría de Marketing — Mayo 2026
+  </p>
+  <br>
+  <p style="font-size:11px;">Para exportar como PDF: Ctrl+P → Guardar como PDF (desactivar encabezados y pies de página)</p>
 </footer>
 
 </body>
