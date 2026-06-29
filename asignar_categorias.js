@@ -133,7 +133,7 @@ async function main() {
   }
   console.log(`✅ ${allProducts.length} productos obtenidos\n`);
 
-  // Test with first product to verify API works
+  // Test with first product
   const testP = allProducts[0];
   const testSku = (testP.variants?.[0]?.sku || '').trim().toUpperCase();
   const testLinea = modeloToLinea[testSku];
@@ -141,16 +141,14 @@ async function main() {
   if (!testCat) testCat = 'pcat_01KTM5223MHKC9HV1S44A9J0D8';
   console.log(`🧪 Prueba con: [${testSku}] ${testP.title.substring(0,40)}`);
   console.log(`   LINEA: ${testLinea}, CAT: ${testCat}`);
-  const testRes = await apiRequest('PATCH', `/admin/products/${testP.id}`, { categories: [{ id: testCat }] }, token);
-  console.log(`   Respuesta HTTP: ${testRes.status}`);
-  console.log(`   Respuesta: ${JSON.stringify(testRes.data).substring(0, 300)}`);
+  const testRes = await apiRequest('POST', `/admin/products/${testP.id}`, { categories: [{ id: testCat }] }, token);
+  console.log(`   HTTP: ${testRes.status} | ${JSON.stringify(testRes.data).substring(0, 200)}`);
 
   if (testRes.status !== 200 && testRes.status !== 201) {
     console.log('\n❌ La prueba fallo. Abortando.');
     return;
   }
-
-  console.log('\n✅ Prueba exitosa. Continuando con todos los productos...\n');
+  console.log('\n✅ Prueba exitosa. Procesando todos los productos...\n');
 
   let ok = 1, fallidos = 0, sinCategoria = 0;
 
@@ -164,21 +162,16 @@ async function main() {
     else if (linea && LINEA_CAT[linea]) catId = LINEA_CAT[linea];
     else catId = getCatByTitle(p.title);
 
-    if (!catId) {
-      sinCategoria++;
-      console.log(`⚠️  Sin categoria: [${sku}] ${p.title.substring(0, 50)}`);
-      continue;
-    }
+    if (!catId) { sinCategoria++; console.log(`⚠️  Sin categoria: [${sku}] ${p.title.substring(0,50)}`); continue; }
 
-    const res = await apiRequest('PATCH', `/admin/products/${p.id}`, { categories: [{ id: catId }] }, token);
+    const res = await apiRequest('POST', `/admin/products/${p.id}`, { categories: [{ id: catId }] }, token);
     if (res.status === 200 || res.status === 201) {
       ok++;
-      if (ok % 50 === 0) console.log(`  Progreso: ${ok}/${allProducts.length} asignados...`);
+      if (ok % 50 === 0) console.log(`  Progreso: ${ok}/${allProducts.length}...`);
     } else {
       fallidos++;
-      if (fallidos <= 3) console.log(`❌ Error [${sku}] HTTP ${res.status}: ${JSON.stringify(res.data).substring(0, 150)}`);
+      if (fallidos <= 3) console.log(`❌ [${sku}] HTTP ${res.status}: ${JSON.stringify(res.data).substring(0,150)}`);
     }
-
     await new Promise(r => setTimeout(r, 250));
   }
 
