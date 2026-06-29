@@ -55,12 +55,12 @@ async function main() {
     process.exit(1);
   }
 
-  const codigoIdx = headerRow.findIndex(h => h === 'CODIGO');
-  const descIdx = headerRow.findIndex(h => h === 'DESCRIPCION' || h.includes('DESCRI'));
-  const modeloIdx = headerRow.findIndex(h => h === 'MODELO');
-  const stockIdx = headerRow.findIndex(h => h.includes('STOCK'));
-  const costoIdx = headerRow.findIndex(h => h.includes('COSTO'));
-  const unidadIdx = headerRow.findIndex(h => h === 'UNIDAD');
+  const codigoIdx = headerRow.findIndex(h => h && h === 'CODIGO');
+  const descIdx = headerRow.findIndex(h => h && (h === 'DESCRIPCION' || h.includes('DESCRI')));
+  const modeloIdx = headerRow.findIndex(h => h && h === 'MODELO');
+  const stockIdx = headerRow.findIndex(h => h && h.includes('STOCK'));
+  const costoIdx = headerRow.findIndex(h => h && h.includes('COSTO'));
+  const unidadIdx = headerRow.findIndex(h => h && h === 'UNIDAD');
 
   console.log(`📋 Columnas: CODIGO=${codigoIdx}, DESCRIPCION=${descIdx}, MODELO=${modeloIdx}, STOCK=${stockIdx}, COSTO=${costoIdx}, UNIDAD=${unidadIdx}`);
 
