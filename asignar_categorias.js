@@ -8,30 +8,29 @@ const EMAIL = 'publicidad@krash-depot.com';
 const PASSWORD = 'KrashDepot_*.';
 const PROFIT_FILE = path.join(__dirname, 'Profit 290626.xlsx');
 
-// Medusa category IDs
 const LINEA_CAT = {
-  'COC': 'pcat_01KTM54XAJS591RN0YTXZ3NR9R',   // Cocinas
-  'HOG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8',   // Bodegon (hogar)
-  'LEN': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',   // Hogar y Decoracion
-  'MUE': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',   // Hogar y Decoracion
-  'VID': 'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR',   // Video
-  'COM': 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',   // Tecnologia
-  'EM':  'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',   // Tecnologia
-  'TEL': 'pcat_01KTM4WJ2MT7111TKM33Q4WJYR',   // Telefonia
-  'FER': 'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH',   // Ferreteria
-  'SON': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',   // Audio
-  'CAR': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',   // Audio
-  'BODG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8',  // Bodegon
-  'NAC': 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',   // Tecnologia
+  'COC': 'pcat_01KTM54XAJS591RN0YTXZ3NR9R',
+  'HOG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8',
+  'LEN': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',
+  'MUE': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',
+  'VID': 'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR',
+  'COM': 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',
+  'EM':  'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',
+  'TEL': 'pcat_01KTM4WJ2MT7111TKM33Q4WJYR',
+  'FER': 'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH',
+  'SON': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',
+  'CAR': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',
+  'BODG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8',
+  'NAC': 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',
 };
 
 function getCatForBLA(titulo) {
   const t = titulo.toLowerCase();
   if (t.includes('aire acondicionado') || t.includes('cortina de aire') || t.includes('minisplit')) return 'pcat_01KSGCP46MDW0BS48P8W9CTB38';
-  if (t.includes('lavadora') || t.includes('lavasecadora') || t.includes('lava y seca')) return 'pcat_01KTM3B4GGHZGDCT2T2HPKV9ZD';
-  if (t.includes('nevera') || t.includes('refrigerador') || t.includes('refrigeradora')) return 'pcat_01KTM3C4CDA4REA4AA36AY9PAK';
+  if (t.includes('lavadora') || t.includes('lavasecadora')) return 'pcat_01KTM3B4GGHZGDCT2T2HPKV9ZD';
+  if (t.includes('nevera') || t.includes('refrigerador')) return 'pcat_01KTM3C4CDA4REA4AA36AY9PAK';
   if (t.includes('congelador') || t.includes('freezer') || t.includes('vinera')) return 'pcat_01KTM3D1AR8CYMBPF6AKJ01H1S3';
-  return 'pcat_01KREC246BG0GF8298F3GG0VDY'; // Linea blanca general
+  return 'pcat_01KREC246BG0GF8298F3GG0VDY';
 }
 
 function getCatByTitle(titulo) {
@@ -43,7 +42,7 @@ function getCatByTitle(titulo) {
   if (t.includes('tv ') || t.includes(' tv') || t.includes('smart tv') || t.includes('televisor')) return 'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR';
   if (t.includes('bocina') || t.includes('parlante') || t.includes('speaker') || t.includes('radio') || t.includes('teatro')) return 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9';
   if (t.includes('celular') || t.includes('smartphone') || t.includes('telefono')) return 'pcat_01KTM4WJ2MT7111TKM33Q4WJYR';
-  if (t.includes('router') || t.includes('camara') || t.includes('laptop') || t.includes('computadora') || t.includes('interruptor')) return 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081';
+  if (t.includes('router') || t.includes('camara') || t.includes('laptop') || t.includes('interruptor')) return 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081';
   if (t.includes('cocina') || t.includes('tope') || t.includes('fregadero') || t.includes('campana') || t.includes('horno') || t.includes('microondas')) return 'pcat_01KTM54XAJS591RN0YTXZ3NR9R';
   if (t.includes('freidora') || t.includes('licuadora') || t.includes('batidora') || t.includes('cafetera') || t.includes('sandwichera') || t.includes('procesador') || t.includes('extractor') || t.includes('plancha') || t.includes('aspiradora') || t.includes('ventilador')) return 'pcat_01KTM5223MHKC9HV1S44A9J0D8';
   if (t.includes('alfombra') || t.includes('cojin') || t.includes('almohada') || t.includes('cortina') || t.includes('adorno') || t.includes('mueble') || t.includes('silla') || t.includes('mesa') || t.includes('sillon') || t.includes('sofa')) return 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q';
@@ -117,7 +116,6 @@ async function main() {
   const token = await getToken();
   const modeloToLinea = await buildModeloToLinea();
 
-  // Fetch all products
   let allProducts = [];
   let offset = 0;
   const limit = 50;
@@ -135,21 +133,36 @@ async function main() {
   }
   console.log(`✅ ${allProducts.length} productos obtenidos\n`);
 
-  let ok = 0, fallidos = 0, sinCategoria = 0;
+  // Test with first product to verify API works
+  const testP = allProducts[0];
+  const testSku = (testP.variants?.[0]?.sku || '').trim().toUpperCase();
+  const testLinea = modeloToLinea[testSku];
+  let testCat = testLinea === 'BLA' ? getCatForBLA(testP.title) : (testLinea ? LINEA_CAT[testLinea] : getCatByTitle(testP.title));
+  if (!testCat) testCat = 'pcat_01KTM5223MHKC9HV1S44A9J0D8';
+  console.log(`🧪 Prueba con: [${testSku}] ${testP.title.substring(0,40)}`);
+  console.log(`   LINEA: ${testLinea}, CAT: ${testCat}`);
+  const testRes = await apiRequest('PATCH', `/admin/products/${testP.id}`, { categories: [{ id: testCat }] }, token);
+  console.log(`   Respuesta HTTP: ${testRes.status}`);
+  console.log(`   Respuesta: ${JSON.stringify(testRes.data).substring(0, 300)}`);
 
-  for (let i = 0; i < allProducts.length; i++) {
+  if (testRes.status !== 200 && testRes.status !== 201) {
+    console.log('\n❌ La prueba fallo. Abortando.');
+    return;
+  }
+
+  console.log('\n✅ Prueba exitosa. Continuando con todos los productos...\n');
+
+  let ok = 1, fallidos = 0, sinCategoria = 0;
+
+  for (let i = 1; i < allProducts.length; i++) {
     const p = allProducts[i];
     const sku = (p.variants?.[0]?.sku || '').trim().toUpperCase();
     const linea = modeloToLinea[sku];
 
     let catId = null;
-    if (linea === 'BLA') {
-      catId = getCatForBLA(p.title);
-    } else if (linea && LINEA_CAT[linea]) {
-      catId = LINEA_CAT[linea];
-    } else {
-      catId = getCatByTitle(p.title);
-    }
+    if (linea === 'BLA') catId = getCatForBLA(p.title);
+    else if (linea && LINEA_CAT[linea]) catId = LINEA_CAT[linea];
+    else catId = getCatByTitle(p.title);
 
     if (!catId) {
       sinCategoria++;
@@ -160,10 +173,10 @@ async function main() {
     const res = await apiRequest('PATCH', `/admin/products/${p.id}`, { categories: [{ id: catId }] }, token);
     if (res.status === 200 || res.status === 201) {
       ok++;
-      if (ok % 20 === 0) console.log(`  Progreso: ${ok} asignados...`);
+      if (ok % 50 === 0) console.log(`  Progreso: ${ok}/${allProducts.length} asignados...`);
     } else {
       fallidos++;
-      console.log(`❌ [${i+1}] ${sku}: ${JSON.stringify(res.data?.message || res.data).substring(0, 80)}`);
+      if (fallidos <= 3) console.log(`❌ Error [${sku}] HTTP ${res.status}: ${JSON.stringify(res.data).substring(0, 150)}`);
     }
 
     await new Promise(r => setTimeout(r, 250));
