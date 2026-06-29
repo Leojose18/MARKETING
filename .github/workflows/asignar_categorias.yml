@@ -1,0 +1,19 @@
+name: Asignar Categorias Medusa
+
+on:
+  workflow_dispatch:
+
+jobs:
+  asignar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/hopeful-bohr-j1ltsp
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Ejecutar script de categorias
+        run: node asignar_categorias.js
