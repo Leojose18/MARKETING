@@ -74,9 +74,10 @@ async function main() {
     if (!codigo || codigo.toUpperCase() === 'CODIGO') return;
 
     const modelo = String(vals[modeloIdx] || '').trim().toUpperCase();
+    const codigoUpper = codigo.toUpperCase();
     totalProfit++;
 
-    if (medusaSkus.has(modelo)) {
+    if (medusaSkus.has(codigoUpper) || medusaSkus.has(modelo)) {
       yaEnMedusa++;
       return;
     }
