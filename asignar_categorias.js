@@ -43,136 +43,143 @@ function getCatByTitle(titulo) {
   const t = titulo.toLowerCase();
 
   // Cupones — sin categoría
-  if (t.includes('cupón') || t.includes('cupon') && t.includes('modo')) return null;
+  if (t.includes('cupon') || t.includes('cupón')) return null;
 
   // Aires Acondicionados
-  if (t.includes('aire acondicionado') || t.includes('cortina de aire') || t.includes('minisplit')) return 'pcat_01KSGCP46MDW0BS48P8W9CTB38';
+  if (t.includes('aire acondicionado') || t.includes('cortina de aire') || t.includes('minisplit') ||
+      t.includes('split ') || t.includes('inverter')) return 'pcat_01KSGCP46MDW0BS48P8W9CTB38';
 
-  // Congeladores / Neveras / Lavadoras
+  // Congeladores
   if (t.includes('congelador') || t.includes('freezer')) return 'pcat_01KTM3D1AR8CYMBPF6AKJ01H1S3';
-  if (t.includes('refrigerador') || t.includes('nevera')) return 'pcat_01KTM3C4CDA4REA4AA36AY9PAK';
-  if (t.includes('lavadora')) return 'pcat_01KTM3B4GGHZGDCT2T2HPKV9ZD';
 
-  // Video / TV
-  if (t.includes('tv ') || t.includes(' tv') || t.includes('televisor') || t.includes('smart tv') || t.includes('cled') || t.includes('led ')) return 'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR';
+  // Neveras / Refrigeradores
+  if (t.includes('refrigerador') || t.includes('nevera') || t.includes('refrigeradora') ||
+      t.includes('frigorífico') || t.includes('frigorifico') || t.includes('enfriador de bebidas')) return 'pcat_01KTM3C4CDA4REA4AA36AY9PAK';
 
-  // Cocinas (artefactos de cocina)
-  if (t.includes('cocina de mesa') || t.includes('cocina de induccion') || t.includes('cocina de inducción') ||
-      t.includes('tope a gas') || t.includes('estufa') || t.includes('hornilla') ||
-      t.includes('cocina portatil') || t.includes('cocina portátil') || t.includes('cocina de piso') ||
-      t.includes('freidora') || t.includes('air fryer') || t.includes('horno') || t.includes('microondas') ||
-      t.includes('fregadero') || t.includes('lavaplatos') || t.includes('campana') || t.includes('gasco')) return 'pcat_01KTM54XAJS591RN0YTXZ3NR9R';
+  // Lavadoras
+  if (t.includes('lavadora') || t.includes('lavasecadora') || t.includes('lava y seca') ||
+      t.includes('secadora')) return 'pcat_01KTM3B4GGHZGDCT2T2HPKV9ZD';
 
-  // Ferretería (INGCO y herramientas)
-  if (t.includes('ingco') || t.includes('martillo') || t.includes('alicate') || t.includes('destornillador') ||
-      t.includes('nivel aluminio') || t.includes('broca') || t.includes('disco de corte') ||
-      t.includes('disco lijador') || t.includes('disco abrasivo') || t.includes('motosierra') ||
-      t.includes('hacha') || t.includes('mazo de acero') || t.includes('cizalla') ||
-      t.includes('grapadora industrial') || t.includes('lijadora') || t.includes('pistola de calor') ||
-      t.includes('cepillo de alambre') || t.includes('cepillos de cerdas') || t.includes('cinta métrica') ||
-      t.includes('cinta metrica') || t.includes('remachadora') || t.includes('corta tubo') ||
-      t.includes('marco de segueta') || t.includes('herramientas para jardín') || t.includes('herramientas para jardin')) return 'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH';
+  // Televisores / Video
+  if (t.includes('televisor') || t.includes('smart tv') || t.includes('pantalla') ||
+      t.includes('qled') || t.includes('oled') || t.includes('uhd') || t.includes('4k tv') ||
+      /\b\d{2,3}"\s*(tv|led|uhd|qled|oled)/i.test(titulo) ||
+      /\btv\b/i.test(titulo)) return 'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR';
 
-  // Audio
-  if (t.includes('bocina') || t.includes('parlante') || t.includes('speaker') || t.includes('equipo de sonido') ||
-      t.includes('barra de sonido') || t.includes('radio ') || t.includes('radio/') ||
-      t.includes('audífonos') || t.includes('audifonos') || t.includes('buds') || t.includes('subwoofer')) return 'pcat_01KTM3GX8D8HBRVRM82ZEMJD6C';
+  // Cocinas
+  if (t.includes('cocina') || t.includes('horno') || t.includes('microondas') ||
+      t.includes('freidora') || t.includes('air fryer') || t.includes('hornilla') ||
+      t.includes('estufa') || t.includes('tope a gas') || t.includes('induccion') ||
+      t.includes('inducción') || t.includes('campana') || t.includes('lavaplatos') ||
+      t.includes('fregadero') || t.includes('gasco')) return 'pcat_01KTM54XAJS591RN0YTXZ3NR9R';
+
+  // Ferretería
+  if (t.includes('ingco') || t.includes('herramienta') || t.includes('martillo') ||
+      t.includes('alicate') || t.includes('destornillador') || t.includes('broca') ||
+      t.includes('disco de corte') || t.includes('motosierra') || t.includes('lijadora') ||
+      t.includes('pistola de calor') || t.includes('cinta métrica') || t.includes('cinta metrica') ||
+      t.includes('remachadora') || t.includes('sierra') || t.includes('taladro') ||
+      t.includes('nivel de aluminio') || t.includes('hacha') || t.includes('cizalla') ||
+      t.includes('cepillo de alambre') || t.includes('corta tubo') || t.includes('segueta')) return 'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH';
+
+  // Audio / Bocinas
+  if (t.includes('bocina') || t.includes('parlante') || t.includes('speaker') ||
+      t.includes('equipo de sonido') || t.includes('barra de sonido') || t.includes('soundbar') ||
+      t.includes('subwoofer') || t.includes('audífono') || t.includes('audifono') ||
+      t.includes('auricular') || t.includes('headset') || t.includes('earbuds') ||
+      t.includes('radio ') || t.includes(' radio') || t.includes('minicomponente') ||
+      t.includes('buds') || t.includes('woofer') || t.includes('componente de sonido')) return 'pcat_01KTM3GX8D8HBRVRM82ZEMJD6C';
 
   // Telefonía
-  if (t.includes('telefono') || t.includes('celular') || t.includes('smartphone') || t.includes('tablet') ||
-      t.startsWith('forro ') || t.includes('forro azul') || t.includes('forro samsung')) return 'pcat_01KTM4WJ2MT7111TKM33Q4WJYR';
+  if (t.includes('samsung galaxy') || t.includes('iphone') || t.includes('xiaomi') ||
+      t.includes('motorola') || t.includes('celular') || t.includes('smartphone') ||
+      t.includes('tablet') || t.includes('forro ') || t.includes('case para') ||
+      t.includes('protector de pantalla') || t.includes('teléfono') || t.includes('telefono')) return 'pcat_01KTM4WJ2MT7111TKM33Q4WJYR';
 
-  // Tecnología (cables, cargadores, cámaras seguridad, UPS, redes)
-  if (t.includes('laptop') || t.includes('computadora') || t.includes('router') || t.includes('smartwatch') ||
-      t.includes('cable cargador') || t.includes('cable carga') || t.includes('cable auxiliar') ||
-      t.includes('cargador') || t.includes('ups ') || t.includes('power station') ||
-      t.includes('respaldo de bater') || t.includes('cámara de seguridad') || t.includes('camara de seguridad') ||
-      t.includes('tapo c') || t.includes('timbre inteligente') || t.includes('switch ') && t.includes('puertos') ||
-      t.includes('modem para exterior') || t.includes('access point')) return 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081';
+  // Tecnología
+  if (t.includes('laptop') || t.includes('computadora') || t.includes('router') ||
+      t.includes('smartwatch') || t.includes('reloj inteligente') || t.includes('cargador') ||
+      t.includes('cable usb') || t.includes('cable tipo c') || t.includes('cable hdmi') ||
+      t.includes('ups ') || t.includes('power bank') || t.includes('power station') ||
+      t.includes('cámara de seguridad') || t.includes('camara de seguridad') ||
+      t.includes('cámara ip') || t.includes('camara ip') || t.includes('access point') ||
+      t.includes('switch de') || t.includes('timbre inteligente') || t.includes('tapo') ||
+      t.includes('modem') || t.includes('antena') || t.includes('disco duro') ||
+      t.includes('memoria') || t.includes('impresora') || t.includes('teclado') ||
+      t.includes('mouse ') || t.includes('monitor ') || t.includes('proyector')) return 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081';
 
-  // Línea Hogar — pequeños electrodomésticos del hogar
-  if (t.includes('licuadora') || t.includes('batidora') || t.includes('tostadora') || t.includes('cafetera') ||
-      t.includes('exprimidor') || t.includes('sandwichera') || t.includes('hervidor') ||
-      t.includes('procesador') || t.includes('extractor') || t.includes('máquina de helados') ||
-      t.includes('maquina de helados') || t.includes('tosty arepa') || t.includes('tosti arepa') ||
-      t.includes('máquina para donuts') || t.includes('olla arrocera') ||
+  // Línea Hogar — pequeños electrodomésticos
+  if (t.includes('licuadora') || t.includes('batidora') || t.includes('tostadora') ||
+      t.includes('cafetera') || t.includes('exprimidor') || t.includes('sandwichera') ||
+      t.includes('hervidor') || t.includes('procesador') || t.includes('extractor de jugo') ||
+      t.includes('juguera') || t.includes('olla arrocera') || t.includes('arrocera') ||
+      t.includes('tosty arepa') || t.includes('tosti arepa') || t.includes('máquina para') ||
+      t.includes('maquina para') || t.includes('waflera') || t.includes('crepera') ||
       t.includes('ventilador') || t.includes('plancha de ropa') || t.includes('plancha al vapor') ||
-      t.includes('plancha alisadora') || t.includes('rasuradora') || t.includes('máquina de afeitar') ||
-      t.includes('maquina de afeitar') || t.includes('secador de cabello') || t.includes('aspiradora')) return 'pcat_01KWAKDF4CVXANSJQ19RENKA9E';
+      t.includes('plancha alisadora') || t.includes('rizador') || t.includes('secador de cabello') ||
+      t.includes('rasuradora') || t.includes('afeitadora') || t.includes('depiladora') ||
+      t.includes('aspiradora') || t.includes('robot aspirador') || t.includes('calentador de agua') ||
+      t.includes('dispensador de agua') || t.includes('purificador') || t.includes('humidificador') ||
+      t.includes('deshumidificador') || t.includes('freidora de aire') || t.includes('multicocina') ||
+      t.includes('olla instantánea') || t.includes('olla a presion') || t.includes('olla multipropósito')) return 'pcat_01KWAKDF4CVXANSJQ19RENKA9E';
 
-  // Bodegón — utensilios, vajilla, ollas, sartenes (no eléctricos)
-  if (t.includes('sartén') || t.includes('sarten') || t.includes('olla') || t.includes('vajilla') ||
-      t.includes('plato ') || t.includes('plato plano') || t.includes('plato hondo') || t.includes('plato de postre') ||
-      t.includes('plato mediano') || t.includes('plato pequeño') || t.includes('plato para servir') ||
-      t.includes('cuchillo') || t.includes('cuchillos') || t.includes('cubierto') ||
-      t.includes('tabla de picar') || t.includes('tabla para picar') || t.includes('tabla de quesos') ||
-      t.includes('colador') || t.includes('batidor de huevo') || t.includes('set de bowls') || t.includes('bowl') ||
-      t.includes('bandeja asadora') || t.includes('bandeja para galletas') || t.includes('porta caliente') ||
-      t.includes('cesta coccion') || t.includes('cesta cocción') || t.includes('cesta de cocción') ||
-      t.includes('molinillo') || t.includes('servilletero') || t.includes('sevilletero') || t.includes('salero') ||
-      t.includes('tazón') || t.includes('tazon') || t.includes('taza') || t.includes('tetera') ||
-      t.includes('azucarera') || t.includes('mantequillera') || t.includes('juego de tazas') ||
-      t.includes('lonchera') || t.includes('vianda') || t.includes('envase plástico') || t.includes('envase plastico') ||
-      t.includes('caja multiusos') || t.includes('contenedor plástico') || t.includes('contenedor plastico') ||
-      t.includes('frutero') || t.includes('delantal') || t.includes('guantes para cocina') ||
-      t.includes('abrelatas') || t.includes('base para tortas') || t.includes('set de utensilios') ||
-      t.includes('juego de utensilios') || t.includes('set utensilios') || t.includes('set de cacerolas') ||
-      t.includes('set de plato') || t.includes('punzón') || t.includes('termo ') ||
-      t.includes('set para bbq') || t.includes('juego de anillos para servilletas') ||
-      t.includes('hielera') || t.includes('toallas microfibra') || t.includes('juego de ollas') ||
-      t.includes('frasco hermético') || t.includes('frascos herméticos') || t.includes('frascos hermeticos') || t.includes('frasco hermetico') ||
-      t.includes('dispensador de vinagre') || t.includes('dispensador de vina') ||
-      t.includes('espátula') || t.includes('espatula') ||
-      t.includes('cepillo para poceta') || t.includes('cepillo poceta')) return 'pcat_01KTM5223MHKC9HV1S44A9J0D8';
+  // Bodegón — utensilios y artículos de cocina no eléctricos
+  if (t.includes('sartén') || t.includes('sarten') || t.includes('olla ') ||
+      t.includes('vajilla') || t.includes('plato ') || t.includes('cuchillo') ||
+      t.includes('cubierto') || t.includes('tabla de picar') || t.includes('colador') ||
+      t.includes('batidor') || t.includes('bowl') || t.includes('bowls') ||
+      t.includes('bandeja') || t.includes('porta caliente') || t.includes('molinillo') ||
+      t.includes('servilletero') || t.includes('sevilletero') || t.includes('salero') ||
+      t.includes('tazón') || t.includes('tazon') || t.includes('taza ') || t.includes('tetera') ||
+      t.includes('azucarera') || t.includes('lonchera') || t.includes('vianda') ||
+      t.includes('envase') || t.includes('contenedor') || t.includes('frutero') ||
+      t.includes('delantal') || t.includes('set de utensilios') || t.includes('juego de utensilios') ||
+      t.includes('set de ollas') || t.includes('juego de ollas') || t.includes('set de cacerolas') ||
+      t.includes('punzón') || t.includes('termo ') || t.includes('hielera') ||
+      t.includes('frasco') || t.includes('dispensador de vinagre') || t.includes('espátula') ||
+      t.includes('espatula') || t.includes('cepillo para poceta') || t.includes('ping pong') ||
+      t.includes('jarra ') || t.includes('rallador') || t.includes('prensa ajos') ||
+      t.includes('pelador') || t.includes('tijeras de cocina') || t.includes('wok') ||
+      t.includes('comal') || t.includes('cacerola') || t.includes('caldero')) return 'pcat_01KTM5223MHKC9HV1S44A9J0D8';
 
-  // Hogar y Decoración — muebles, textiles, decoración, baño, organización
-  if (t.includes('cuadros decorativos') || t.includes('cuadro decorativo') || t.includes('set de cuadros') ||
-      t.includes('caja organizadora') || t.includes('caja plástica') || t.includes('caja plastica') ||
-      t.includes('organizador plástico') || t.includes('organizador plastico') ||
-      t.includes('set de canastas') || t.includes('canastas') || t.includes('canastas') ||
-      t.includes('adorno') || t.includes('portavela') || t.includes('candelero') || t.includes('candelabro') ||
-      t.includes('vela aromatica') || t.includes('vela aromática') || t.includes('quemador de incienso') ||
+  // Hogar y Decoración — muebles, textiles, decoración, organización
+  if (t.includes('adorno') || t.includes('portavela') || t.includes('candelero') ||
+      t.includes('candelabro') || t.includes('vela ') || t.includes('incienso') ||
       t.includes('cojín') || t.includes('cojin') || t.includes('almohada') ||
-      t.includes('cortina de baño') || t.includes('juego de baño') || t.includes('accesorios') && t.includes('baño') ||
-      t.includes('set de accesorios baño') || t.includes('dispensador de jabón') || t.includes('dispensador de jabon') ||
-      t.includes('jabonera') || t.includes('papelera') || t.includes('basurero') || t.includes('bote de basura') ||
-      t.includes('canasta plástica') || t.includes('canasta plastica') || t.includes('canasta organizadora') ||
-      t.includes('cesto para ropa') || t.includes('cesto ropa') || t.includes('canasta para ropa') ||
-      t.includes('canasta plegable') || t.includes('organizador de baño') || t.includes('organizador de corb') ||
-      t.includes('armario de tela') || t.includes('zapatera') || t.includes('estante') || t.includes('estantería') ||
-      t.includes('biblioteca') || t.includes('mesa de centro') || t.includes('mesa de noche') ||
-      t.includes('carrito de bar') || t.includes('sillón') || t.includes('sillon') ||
-      t.includes('silla comedor') || t.includes('silla de bar') || t.includes('silla plástica') ||
-      t.includes('silla playera') || t.includes('silla para barra') || t.includes('silla camping') ||
-      t.includes('silla infantil') || t.includes('silla fija') || t.includes('set de 4 sillas') ||
-      t.includes('banco negro') || t.includes('banco azul') || t.includes('butaca') ||
-      t.includes('sofá') || t.includes('sofa seccional') || t.includes('sofa inflable') ||
-      t.includes('cama ') || t.includes('base cama') || t.includes('mueble multiusos') || t.includes('mueble de') ||
-      t.includes('revestimiento plástico') || t.includes('revestimiento plastico') ||
-      t.includes('tubo de cortina') || t.includes('alfombra') || t.includes('tapete') ||
-      t.includes('sabana') || t.includes('sábana') || t.includes('colchon') || t.includes('colchón') ||
-      t.includes('toalla') || t.includes('edredon') || t.includes('edredón') || t.includes('funda') ||
-      t.includes('manta') || t.includes('cortina') || t.includes('ropa de cama') || t.includes('juego de cama') ||
-      t.includes('lenceria') || t.includes('lencería') || t.includes('perchero') || t.includes('librero') ||
-      t.includes('bandeja dorada') || t.includes('bandeja decorativa') || t.includes('plato decorativo') ||
-      t.includes('alcancía') || t.includes('alcancia') || t.includes('caja de libro') ||
-      t.includes('maleta') || t.includes('travel') || t.includes('panel ac')) return 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q';
+      t.includes('cortina') || t.includes('toalla') || t.includes('sábana') || t.includes('sabana') ||
+      t.includes('colchón') || t.includes('colchon') || t.includes('edredón') || t.includes('edredon') ||
+      t.includes('funda ') || t.includes('manta ') || t.includes('ropa de cama') ||
+      t.includes('alfombra') || t.includes('tapete') || t.includes('lencería') || t.includes('lenceria') ||
+      t.includes('perchero') || t.includes('librero') || t.includes('estante') || t.includes('estantería') ||
+      t.includes('biblioteca') || t.includes('mueble') || t.includes('silla ') ||
+      t.includes('sillón') || t.includes('sillon') || t.includes('sofá') || t.includes('sofa') ||
+      t.includes('cama ') || t.includes('mesa ') || t.includes('escritorio') ||
+      t.includes('zapatera') || t.includes('armario') || t.includes('organizador') ||
+      t.includes('caja organizadora') || t.includes('caja plástica') || t.includes('canasta') ||
+      t.includes('cesto') || t.includes('basurero') || t.includes('papelera') ||
+      t.includes('jabonera') || t.includes('dispensador de jabón') || t.includes('dispensador de jabon') ||
+      t.includes('cuadro') || t.includes('espejo') || t.includes('florero') ||
+      t.includes('figura decorativa') || t.includes('decorativa') || t.includes('decorativo') ||
+      t.includes('maleta') || t.includes('mochila') || t.includes('bolso') ||
+      t.includes('baúl') || t.includes('baul') || t.includes('perchero') ||
+      t.includes('panel ') || t.includes('repisa') || t.includes('banco ') || t.includes('butaca')) return 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q';
 
-  return null;
+  // Fallback — Hogar y Decoración para todo lo que no coincida
+  return 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q';
 }
 
 function getCategoryId(sku, titulo) {
   // Cupones sin categoría
   if (sku.startsWith('CUPON')) return null;
 
-  // Buscar por SKU exacto
+  // Buscar por SKU exacto en el mapa
   const linea = SKU_LINEA[sku];
   if (linea && linea !== 'UNKNOWN') {
     if (linea === 'BLA') return getCatForBLA(titulo);
     return LINEA_CAT[linea] || getCatByTitle(titulo);
   }
 
-  // Detectar línea por prefijo del SKU (códigos internos no corregidos)
+  // Detectar línea por prefijo del SKU
   const skuU = sku.toUpperCase();
   const prefixMap = {
     'BODG': 'BODG', 'HOG': 'HOG', 'LEN': 'LEN', 'MUE': 'MUE',
@@ -188,6 +195,7 @@ function getCategoryId(sku, titulo) {
     }
   }
 
+  // Siempre usar título como último recurso (incluye fallback a Hogar y Decoración)
   return getCatByTitle(titulo);
 }
 
@@ -239,8 +247,7 @@ async function main() {
   const products = await getAllProducts(token);
   console.log(`✅ Total productos: ${products.length}`);
 
-  let asignados = 0, sinCategoria = 0, errores = 0;
-  const sinCategoriaList = [];
+  let asignados = 0, cupones = 0, errores = 0;
 
   for (let i = 0; i < products.length; i++) {
     const p = products[i];
@@ -248,16 +255,16 @@ async function main() {
     const catId = getCategoryId(sku, p.title);
 
     if (!catId) {
-      sinCategoria++;
-      sinCategoriaList.push({ titulo: p.title, sku });
-      console.log(`⚠️  [${i+1}/${products.length}] SIN CATEGORÍA: ${p.title.substring(0, 60)}`);
+      cupones++;
+      console.log(`⏭️  [${i+1}/${products.length}] CUPÓN (sin categoría): ${p.title.substring(0, 60)}`);
       continue;
     }
 
     const res = await apiRequest('POST', `/admin/products/${p.id}`, { categories: [{ id: catId }] }, token);
     if (res.status === 200 || res.status === 201) {
       asignados++;
-      console.log(`✅ [${i+1}/${products.length}] ${sku} → ${catId}`);
+      if (asignados <= 5 || asignados % 50 === 0) console.log(`✅ [${i+1}/${products.length}] ${p.title.substring(0, 50)} → ${catId}`);
+      else process.stdout.write(`\r✅ Asignados: ${asignados}/${products.length - cupones}...`);
     } else {
       errores++;
       console.log(`❌ [${i+1}/${products.length}] ${sku}: ${JSON.stringify(res.data?.message || res.data).substring(0, 120)}`);
@@ -266,12 +273,7 @@ async function main() {
     await new Promise(r => setTimeout(r, 150));
   }
 
-  console.log(`\n🏁 Resultado: ${asignados} asignados, ${sinCategoria} sin categoría, ${errores} errores`);
-
-  if (sinCategoriaList.length > 0) {
-    fs.writeFileSync(path.join(__dirname, 'sin_categoria.json'), JSON.stringify(sinCategoriaList, null, 2));
-    console.log(`⚠️  Productos sin categoría guardados en sin_categoria.json`);
-  }
+  console.log(`\n\n🏁 Resultado: ${asignados} asignados, ${cupones} cupones omitidos, ${errores} errores`);
 }
 
 main().catch(console.error);
