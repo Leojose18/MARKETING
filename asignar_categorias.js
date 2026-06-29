@@ -11,17 +11,20 @@ const SKU_LINEA = {"STV002":"UNKNOWN","STV007":"UNKNOWN","SBC004":"LEN","SBC005"
 
 // Mapeo LINEA → Medusa category ID
 const LINEA_CAT = {
-  'COC': 'pcat_01KTM54XAJS591RN0YTXZ3NR9R',
-  'HOG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8',
-  'LEN': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',
-  'MUE': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',
-  'VID': 'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR',
-  'COM': 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',
-  'EM':  'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',
-  'TEL': 'pcat_01KTM4WJ2MT7111TKM33Q4WJYR',
-  'FER': 'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH',
-  'SON': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',
-  'CAR': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',
+  'BLA':  'pcat_01KREC246BG0GF8298F3GG0VDY',   // Línea blanca
+  'HOG':  'pcat_01KWAKDF4CVXANSJQ19RENKA9E',    // Línea Hogar (pequeños electrodomésticos)
+  'BODG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8',   // Bodegón
+  'LEN':  'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',  // Hogar y Decoración
+  'MUE':  'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',  // Hogar y Decoración
+  'COC':  'pcat_01KTM54XAJS591RN0YTXZ3NR9R',   // Cocinas
+  'VID':  'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR',   // Video
+  'COM':  'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',   // Tecnología
+  'EM':   'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',   // Tecnología
+  'TEL':  'pcat_01KTM4WJ2MT7111TKM33Q4WJYR',   // Telefonía
+  'FER':  'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH',   // Ferretería
+  'SON':  'pcat_01KTM3GX8D8HBRVRM82ZEMJD6C',   // Audio
+  'CAR':  'pcat_01KTM3GX8D8HBRVRM82ZEMJD6C',   // Audio
+  'NAC':  'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',   // Tecnología
 };
 
 function getCatForBLA(titulo) {
@@ -67,10 +70,10 @@ function getCatByTitle(titulo) {
       t.includes('cinta metrica') || t.includes('remachadora') || t.includes('corta tubo') ||
       t.includes('marco de segueta') || t.includes('herramientas para jardín') || t.includes('herramientas para jardin')) return 'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH';
 
-  // Audio / Bocinas / Radio
+  // Audio
   if (t.includes('bocina') || t.includes('parlante') || t.includes('speaker') || t.includes('equipo de sonido') ||
       t.includes('barra de sonido') || t.includes('radio ') || t.includes('radio/') ||
-      t.includes('audífonos') || t.includes('audifonos') || t.includes('buds') || t.includes('subwoofer')) return 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9';
+      t.includes('audífonos') || t.includes('audifonos') || t.includes('buds') || t.includes('subwoofer')) return 'pcat_01KTM3GX8D8HBRVRM82ZEMJD6C';
 
   // Telefonía
   if (t.includes('telefono') || t.includes('celular') || t.includes('smartphone') || t.includes('tablet') ||
@@ -84,12 +87,17 @@ function getCatByTitle(titulo) {
       t.includes('tapo c') || t.includes('timbre inteligente') || t.includes('switch ') && t.includes('puertos') ||
       t.includes('modem para exterior') || t.includes('access point')) return 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081';
 
-  // Línea blanca general (ventiladores, planchas, rasuradoras, secadores, aspiradoras)
-  if (t.includes('ventilador') || t.includes('plancha de ropa') || t.includes('plancha al vapor') ||
+  // Línea Hogar — pequeños electrodomésticos del hogar
+  if (t.includes('licuadora') || t.includes('batidora') || t.includes('tostadora') || t.includes('cafetera') ||
+      t.includes('exprimidor') || t.includes('sandwichera') || t.includes('hervidor') ||
+      t.includes('procesador') || t.includes('extractor') || t.includes('máquina de helados') ||
+      t.includes('maquina de helados') || t.includes('tosty arepa') || t.includes('tosti arepa') ||
+      t.includes('máquina para donuts') || t.includes('olla arrocera') ||
+      t.includes('ventilador') || t.includes('plancha de ropa') || t.includes('plancha al vapor') ||
       t.includes('plancha alisadora') || t.includes('rasuradora') || t.includes('máquina de afeitar') ||
-      t.includes('maquina de afeitar') || t.includes('secador de cabello') || t.includes('aspiradora')) return 'pcat_01KREC246BG0GF8298F3GG0VDY';
+      t.includes('maquina de afeitar') || t.includes('secador de cabello') || t.includes('aspiradora')) return 'pcat_01KWAKDF4CVXANSJQ19RENKA9E';
 
-  // Bodegón — utensilios, vajilla, ollas, sartenes, cocina pequeña
+  // Bodegón — utensilios, vajilla, ollas, sartenes (no eléctricos)
   if (t.includes('sartén') || t.includes('sarten') || t.includes('olla') || t.includes('vajilla') ||
       t.includes('plato ') || t.includes('plato plano') || t.includes('plato hondo') || t.includes('plato de postre') ||
       t.includes('plato mediano') || t.includes('plato pequeño') || t.includes('plato para servir') ||
@@ -101,11 +109,6 @@ function getCatByTitle(titulo) {
       t.includes('molinillo') || t.includes('servilletero') || t.includes('salero') ||
       t.includes('tazón') || t.includes('tazon') || t.includes('taza') || t.includes('tetera') ||
       t.includes('azucarera') || t.includes('mantequillera') || t.includes('juego de tazas') ||
-      t.includes('licuadora') || t.includes('batidora') || t.includes('tostadora') || t.includes('cafetera') ||
-      t.includes('exprimidor') || t.includes('sandwichera') || t.includes('hervidor') ||
-      t.includes('procesador') || t.includes('extractor') || t.includes('máquina de helados') ||
-      t.includes('maquina de helados') || t.includes('tosty arepa') || t.includes('tosti arepa') ||
-      t.includes('máquina para donuts') || t.includes('olla arrocera') ||
       t.includes('lonchera') || t.includes('vianda') || t.includes('envase plástico') || t.includes('envase plastico') ||
       t.includes('caja multiusos') || t.includes('contenedor plástico') || t.includes('contenedor plastico') ||
       t.includes('frutero') || t.includes('delantal') || t.includes('guantes para cocina') ||
@@ -161,10 +164,10 @@ function getCategoryId(sku, titulo) {
   // Detectar línea por prefijo del SKU (códigos internos no corregidos)
   const skuU = sku.toUpperCase();
   const prefixMap = {
-    'HOG': 'HOG', 'LEN': 'LEN', 'MUE': 'MUE', 'COC': 'COC',
-    'VID': 'VID', 'COM': 'COM', 'TEL': 'TEL', 'FER': 'FER',
-    'SON': 'SON', 'CAR': 'CAR', 'BLA': 'BLA', 'EM': 'EM',
-    'NAC': 'COM', 'BODG': 'HOG',
+    'BODG': 'BODG', 'HOG': 'HOG', 'LEN': 'LEN', 'MUE': 'MUE',
+    'COC': 'COC', 'VID': 'VID', 'COM': 'COM', 'TEL': 'TEL',
+    'FER': 'FER', 'SON': 'SON', 'CAR': 'CAR', 'BLA': 'BLA',
+    'EM': 'EM', 'NAC': 'NAC',
   };
   for (const [prefix, lineaCode] of Object.entries(prefixMap)) {
     if (skuU.startsWith(prefix)) {
