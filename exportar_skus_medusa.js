@@ -27,7 +27,7 @@ function apiRequest(method, endpoint, body, token) {
 }
 
 async function getToken() {
-  const res = await apiRequest('POST', '/auth/user/emailpass', { email: EMAIL, password: PASSWORD }, null);
+  const res = await apiRequest('POST', '/auth/user/emailpass', { email: EMAIL, password: PASSWORD });
   if (res.data?.token) { console.log('✅ Login exitoso'); return res.data.token; }
   throw new Error('Login fallido: ' + JSON.stringify(res.data));
 }
@@ -37,15 +37,15 @@ async function main() {
 
   let allSkus = [];
   let offset = 0;
-  const limit = 100;
+  const limit = 50;
   let total = null;
 
-  console.log('📦 Exportando todos los productos de Medusa...');
+  console.log('📦 Exportando todos los SKUs de Medusa...');
 
   while (true) {
-    const res = await apiRequest('GET', `/admin/products?limit=${limit}&offset=${offset}&fields=id,title,variants.sku`, null, token);
+    const res = await apiRequest('GET', `/admin/products?limit=${limit}&offset=${offset}`, null, token);
     if (res.status !== 200) {
-      console.error('Error:', res.status, JSON.stringify(res.data));
+      console.error('Error:', res.status, JSON.stringify(res.data).substring(0, 200));
       break;
     }
 
@@ -58,16 +58,17 @@ async function main() {
       }
     }
 
-    console.log(`  Progreso: ${offset + products.length}/${total} productos, ${allSkus.length} SKUs encontrados`);
+    console.log(`  Progreso: ${offset + products.length}/${total} productos, ${allSkus.length} SKUs`);
 
     offset += products.length;
     if (products.length < limit || offset >= total) break;
-    await new Promise(r => setTimeout(r, 200));
+    await new Promise(r => setTimeout(r, 300));
   }
 
   const outputPath = path.join(__dirname, 'medusa_skus.json');
   fs.writeFileSync(outputPath, JSON.stringify(allSkus, null, 2));
   console.log(`\n✅ ${allSkus.length} SKUs exportados a: ${outputPath}`);
+  console.log('Muestra de los primeros 10:', allSkus.slice(0, 10));
 }
 
 main().catch(console.error);
