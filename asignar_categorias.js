@@ -11,28 +11,38 @@ const SKU_LINEA = {"STV002":"UNKNOWN","STV007":"UNKNOWN","SBC004":"LEN","SBC005"
 
 // Mapeo LINEA → Medusa category ID
 const LINEA_CAT = {
-  'COC': 'pcat_01KTM54XAJS591RN0YTXZ3NR9R',
-  'HOG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8',
-  'LEN': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',
-  'MUE': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',
-  'VID': 'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR',
-  'COM': 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',
-  'EM':  'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',
-  'TEL': 'pcat_01KTM4WJ2MT7111TKM33Q4WJYR',
-  'FER': 'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH',
-  'SON': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',
-  'CAR': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',
+  'COC': 'pcat_01KTM54XAJS591RN0YTXZ3NR9R', // Cocinas
+  'HOG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8', // Bodegón (Electrodoméstico Menor)
+  'LEN': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q', // Hogar y Decoración
+  'MUE': 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q', // Hogar y Decoración (muebles)
+  'VID': 'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR',  // Video
+  'COM': 'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',  // Tecnología
+  'EM':  'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',  // Tecnología
+  'TEL': 'pcat_01KTM4WJ2MT7111TKM33Q4WJYR',  // Telefonía
+  'FER': 'pcat_01KTWC3P75T9BAWQ7A2XHH0TVH',  // Ferretería
+  'SON': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',  // Bocinas / Audio
+  'CAR': 'pcat_01KTM3K9R5GKPYAETKDXDA8KM9',  // Audio (car audio)
 };
 
+// Para BLA (Línea Blanca) se necesita el título para distinguir sub-categoría
 function getCatForBLA(titulo) {
   const t = titulo.toLowerCase();
-  if (t.includes('aire acondicionado') || t.includes('cortina de aire') || t.includes('minisplit')) return 'pcat_01KSGCP46MDW0BS48P8W9CTB38';
-  if (t.includes('lavadora') || t.includes('lavasecadora') || t.includes('lava y seca')) return 'pcat_01KTM3B4GGHZGDCT2T2HPKV9ZD';
-  if (t.includes('refrigerador') || t.includes('nevera') || t.includes('refrigeradora')) return 'pcat_01KTM3C4CDA4REA4AA36AY9PAK';
-  if (t.includes('congelador') || t.includes('freezer')) return 'pcat_01KTM3D1AR8CYMBPF6AKJ01H1S3';
-  return 'pcat_01KREC246BG0GF8298F3GG0VDY';
+  if (t.includes('aire acondicionado') || t.includes('cortina de aire') || t.includes('minisplit')) {
+    return 'pcat_01KSGCP46MDW0BS48P8W9CTB38'; // Aires Acondicionados
+  }
+  if (t.includes('lavadora') || t.includes('lavasecadora') || t.includes('lava y seca')) {
+    return 'pcat_01KTM3B4GGHZGDCT2T2HPKV9ZD'; // Lavadoras
+  }
+  if (t.includes('refrigerador') || t.includes('nevera') || t.includes('refrigeradora')) {
+    return 'pcat_01KTM3C4CDA4REA4AA36AY9PAK'; // Neveras
+  }
+  if (t.includes('congelador') || t.includes('freezer')) {
+    return 'pcat_01KTM3D1AR8CYMBPF6AKJ01H1S3'; // Congeladores
+  }
+  return 'pcat_01KREC246BG0GF8298F3GG0VDY'; // Línea blanca (genérico)
 }
 
+// Fallback por palabras clave en el título para UNKNOWN
 function getCatByTitle(titulo) {
   const t = titulo.toLowerCase();
   if (t.includes('aire acondicionado') || t.includes('cortina de aire') || t.includes('minisplit')) return 'pcat_01KSGCP46MDW0BS48P8W9CTB38';
