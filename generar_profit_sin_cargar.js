@@ -2,7 +2,7 @@ const ExcelJS = require('exceljs');
 const fs = require('fs');
 const path = require('path');
 
-const PROFIT_FILE = path.join(__dirname, 'Profit_290626.xlsx');
+const PROFIT_FILE = path.join(__dirname, 'Profit 290626.xlsx');
 const MEDUSA_SKUS_FILE = path.join(__dirname, 'medusa_skus.json');
 const OUTPUT_FILE = path.join(__dirname, 'profit_sin_cargar_v2.xlsx');
 
@@ -32,8 +32,11 @@ async function main() {
 
   let profitSheet = null;
   workbook.eachSheet(sheet => {
-    if (!profitSheet) profitSheet = sheet;
+    if (sheet.name.toLowerCase().includes('profit') || sheet.name === 'Hoja1' || sheet.name === 'Sheet1') {
+      if (!profitSheet) profitSheet = sheet;
+    }
   });
+  if (!profitSheet) profitSheet = workbook.worksheets[0];
   console.log(`📄 Leyendo hoja: ${profitSheet.name}`);
 
   let headerRow = null;
