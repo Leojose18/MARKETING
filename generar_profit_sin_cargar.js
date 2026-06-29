@@ -43,7 +43,7 @@ async function main() {
   let headerIdx = 0;
   profitSheet.eachRow((row, rowNum) => {
     if (headerRow) return;
-    const vals = row.values.map(v => String(v || '').trim().toUpperCase());
+    const vals = Array.from(row.values, v => String(v || '').trim().toUpperCase());
     if (vals.includes('CODIGO') || vals.includes('DESCRIPCION')) {
       headerRow = vals;
       headerIdx = rowNum;
