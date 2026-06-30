@@ -17,8 +17,8 @@ const LINEA_CAT = {
   'BLA':  'pcat_01KREC246BG0GF8298F3GG0VDY',   // Línea blanca
   'HOG':  'pcat_01KWAKDF4CVXANSJQ19RENKA9E',    // Línea Hogar (pequeños electrodomésticos)
   'BODG': 'pcat_01KTM5223MHKC9HV1S44A9J0D8',   // Bodegón
-  'LEN':  'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',  // Hogar y Decoración
-  'MUE':  'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q',  // Hogar y Decoración
+  'LEN':  'pcat_01KWCHGAF4ECHP4J65Y37MF9XV',  // Hogar y Decoración
+  'MUE':  'pcat_01KWCHGAF4ECHP4J65Y37MF9XV',  // Hogar y Decoración
   'COC':  'pcat_01KTM54XAJS591RN0YTXZ3NR9R',   // Cocinas
   'VID':  'pcat_01KTM4QWEKKFNMZVG2Q2WC13WR',   // Video
   'COM':  'pcat_01KTM4ZBPZGFWAGFQPX5P4D081',   // Tecnología
@@ -162,10 +162,10 @@ function getCatByTitle(titulo) {
       t.includes('figura decorativa') || t.includes('decorativa') || t.includes('decorativo') ||
       t.includes('maleta') || t.includes('mochila') || t.includes('bolso') ||
       t.includes('baúl') || t.includes('baul') || t.includes('perchero') ||
-      t.includes('panel ') || t.includes('repisa') || t.includes('banco ') || t.includes('butaca')) return 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q';
+      t.includes('panel ') || t.includes('repisa') || t.includes('banco ') || t.includes('butaca')) return 'pcat_01KWCHGAF4ECHP4J65Y37MF9XV';
 
   // Fallback — Hogar y Decoración para todo lo que no coincida
-  return 'pcat_01KREC2BTSDBBBWF4NE9FMZPZ9Q';
+  return 'pcat_01KWCHGAF4ECHP4J65Y37MF9XV';
 }
 
 function getCategoryId(sku, titulo) {
