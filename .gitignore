@@ -1,0 +1,7 @@
+node_modules/
+package-lock.json
+package.json
+*.xlsx
+medusa_skus.json
+sin_categoria.json
+log_*.txt
