@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "dapta-ai": {
+      "type": "http",
+      "url": "https://mcp.dapta.ai/mcp",
+      "headers": {
+        "x-api-key": "${DAPTA_API_KEY}"
+      }
+    }
+  }
+}
